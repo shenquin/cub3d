@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:03:58 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/14 14:01:07 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/15 14:37:28 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	test(t_data data)
 {
+	//int x = 0;
+
 	printf("pos_x = %d\n", data.pos_x);
 	printf("pos_y = %d\n", data.pos_y);
 	printf("fl_r = %d\n", data.fl_r);
@@ -27,6 +29,12 @@ void	test(t_data data)
 	printf("WE = %s\n", data.WE);
 	printf("EA = %s\n", data.EA);
 	printf("sprite = %s\n", data.sprite);
+
+	/*while (data.map[x])
+	{
+		ft_putstr_fd(data.map[x], 1);
+		x++;
+	}*/
 }
 
 int	main(int ac, char **av)
@@ -44,6 +52,6 @@ int	main(int ac, char **av)
 	{
 		parsing(data, line);
 	}
-	test(*data);
+	//test(*data);
 	return (0);
 }

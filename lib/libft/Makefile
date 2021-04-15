@@ -6,7 +6,7 @@
 #    By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/15 13:17:14 by thgillai          #+#    #+#              #
-#    Updated: 2021/04/13 17:50:11 by thgillai         ###   ########.fr        #
+#    Updated: 2021/04/15 16:07:38 by thgillai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,9 @@ SRCS =		atoi.c strlen.c isalpha.c isdigit.c strchr.c putstr_fd.c \
 			memchr.c memcmp.c memmove.c calloc.c substr.c strjoin.c \
 			lstnew.c lstadd_front.c lstsize.c lstlast.c listadd_back.c \
 			lstdelone.c lstclear.c lstiter.c lstmap.c strtrim.c itoa.c \
-			strmapi.c split.c ../get_next_line/get_next_line.c \
-			../get_next_line/get_next_line_utils.c ispace.c
+			strmapi.c split.c ispace.c strcpy.c \
+			../get_next_line/get_next_line.c \
+			../get_next_line/get_next_line_utils.c \
 
 
 OBJS =		${addprefix ${SRCDIR}, ${SRCS:.c=.o}}

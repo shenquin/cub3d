@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:19:53 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/14 13:58:52 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/15 15:19:01 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ void	parsing(t_data *data, char *line)
 		ce(&line[1], data);
 	else if (line[0] == 'F' && line[1] == ' ')
 		fl(&line[1], data);
+	else if (line[0] == '1')
+		allocmap(&line[0], data);
 	else if (line[0] == 0)
 		return ;
 	/*else
@@ -93,3 +95,4 @@ void	parsing(t_data *data, char *line)
 }
 
 //mlx_xpm_file_to_image <-- regarde si string invalide
+// mettre compteur pour ne pas que la map se fasse parsée trop tot

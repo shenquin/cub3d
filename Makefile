@@ -6,7 +6,7 @@
 #    By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/29 14:23:23 by thgillai          #+#    #+#              #
-#    Updated: 2021/04/14 13:55:12 by thgillai         ###   ########.fr        #
+#    Updated: 2021/04/14 14:52:28 by thgillai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ SRCNAME =	src/main.c\
 			src/parsing.c \
 			src/error_handler.c \
 			src/utils.c \
-			src/parsing2.c
+			src/parsing2.c \
+			src/parsemap.c
 
 SRCS	= ${SRCNAME}
 

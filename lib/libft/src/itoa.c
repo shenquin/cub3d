@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:03:13 by thgillai          #+#    #+#             */
-/*   Updated: 2021/03/17 13:03:47 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/15 16:24:39 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ char		*ft_itoa(int nbr)
 	long	nb;
 
 	nb = (long)nbr;
-	if (!(str = (char *)malloc(calc_size(nb) * sizeof(char))))
+	str = (char *)malloc(calc_size(nb) * sizeof(char));
+	if (!str)
 		return (0);
 	i = 0;
 	if (nb < 0)

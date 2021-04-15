@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calloc.c                                           :+:      :+:    :+:   */
+/*   strcpy.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/15 12:49:22 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/15 16:23:59 by thgillai         ###   ########.fr       */
+/*   Created: 2021/04/14 15:35:58 by thgillai          #+#    #+#             */
+/*   Updated: 2021/04/14 15:38:04 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
-void *ft_calloc(size_t count, size_t size)
+size_t ft_strcpy(char *restrict dest, const char *restrict src)
 {
-	void *str;
+	size_t i;
 
-	str = malloc(size * count);
-	if (!str)
-		return (NULL);
-	ft_bzero(str, size * count);
-	if (!str)
-		return (NULL);
-	return (str);
+	i = 0;
+	if (!dest || !src)
+		return (0);
+	while (src[i] && i)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (ft_strlen(src));
 }

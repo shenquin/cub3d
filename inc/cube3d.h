@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:28:07 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/14 14:01:25 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/15 15:38:53 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,14 @@ typedef struct	s_data
 	char		*WE;
 	char		*EA;
 	char		*sprite;
+	char		**map;
 	void		*mlx_ptr;
 }				t_data;
+
+typedef struct	s_utils
+{
+	int			i;
+}				t_utils;
 
 typedef struct		s_pain
 {
@@ -51,5 +57,7 @@ void	south(char *line, t_data *data);
 void	west(char *line, t_data *data);
 void	east(char *line, t_data *data);
 void	sprite(char *line, t_data *data);
+void	parsemap(char *line, t_data *data, t_utils *utils);
+void	allocmap(char *line, t_data *data);
 
 #endif

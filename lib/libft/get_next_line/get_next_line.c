@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 10:26:18 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/12 17:00:44 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/15 16:23:39 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ static char	*get_line(char *reste)
 	i = 0;
 	while (reste && reste[i] && reste[i] != '\n')
 		i++;
-	if (!(line = (char *)malloc((i + 1) * sizeof(char))))
+	line = (char *)malloc((i + 1) * sizeof(char));
+	if (!line)
 		return (NULL);
 	i = 0;
 	while (reste && reste[i] && reste[i] != '\n')
@@ -38,7 +39,8 @@ static char	*ft_strjoinplus(char *reste, char *buff, int ret)
 	int		i;
 	int		j;
 
-	if (!(new = (char *)malloc((ft_strlen2(reste) + ret + 1) * sizeof(char))))
+	new = (char *)malloc((ft_strlen2(reste) + ret + 1) * sizeof(char));
+	if (!new)
 		return (0);
 	i = 0;
 	while (reste && reste[i])
@@ -70,7 +72,8 @@ static char	*free_reste(char *reste, int *ret, int j)
 			free(reste);
 		return (0);
 	}
-	if (!(new = (char *)malloc((ft_strlen2(reste) - i + 1) * sizeof(char))))
+	new = (char *)malloc((ft_strlen2(reste) - i + 1) * sizeof(char));
+	if (!new)
 	{
 		*ret = -1;
 		free(reste);

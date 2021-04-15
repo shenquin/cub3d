@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 15:49:08 by thgillai          #+#    #+#             */
-/*   Updated: 2021/03/15 16:22:17 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/15 16:25:44 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ char *ft_strjoin(char const *s1, char const *s2)
 	if (!s1 || !s2)
 		return (NULL);
 	len = ft_strlen(s1) + ft_strlen(s2);
-	if (!(dest = malloc((len + 1) * sizeof(char))))
+	dest = malloc((len + 1) * sizeof(char));
+	if (!dest)
 		return (NULL);
 	while (s1[i])
 	{
