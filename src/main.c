@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:03:58 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/15 14:37:28 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/16 16:59:54 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	test(t_data data)
 	printf("WE = %s\n", data.WE);
 	printf("EA = %s\n", data.EA);
 	printf("sprite = %s\n", data.sprite);
+	printf("map_argnb = %d\n", data.map_argnb);
 
 	/*while (data.map[x])
 	{
@@ -47,11 +48,12 @@ int	main(int ac, char **av)
 	line = NULL;
 	data = ft_calloc2(sizeof(t_data));
 	if (ac != 2)
-		exit_error("Wrong arg number");
+		exit_error("Invalid arguments number");
 	while ((get_next_line(fd, &line)) > 0)
 	{
 		parsing(data, line);
 	}
-	//test(*data);
+	check_data(data);
+	test(*data);
 	return (0);
 }
