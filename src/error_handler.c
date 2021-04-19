@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 13:43:33 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/16 17:05:25 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/19 12:06:02 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,19 @@
 void	check_cefl(char *line)
 {
 	int i;
+	int nb_str;
 
+	i = 1;
+	nb_str = 0;
+	while (line[i])
+	{
+		if (ft_isalnum(line[i]))
+			if (!ft_isalnum(line[i - 1]))
+				nb_str++;
+		i++;
+	}
+	if (nb_str != 3)
+		exit_error("Invalid ceiling or floor");
 	i = 1;
 	while (line[i])
 	{

@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:19:53 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/16 17:07:05 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/17 17:19:45 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ void	parsing(t_data *data, char *line)
 			exit_error("Parsing data error");*/
 }
 
-// mlx_xpm_file_to_image <-- regarde si string invalide
+// mlx_xpm_file_to_image <-- regarde si path invalide
 // mettre compteur pour ne pas que la map se fasse parsée trop tot
