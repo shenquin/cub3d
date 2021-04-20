@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   itoa.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:03:13 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/15 16:24:39 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/20 14:30:23 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,17 @@ static int	calc_size(long nb)
 	return (size + 1);
 }
 
-char		*ft_itoa(int nbr)
+void	norme_itoa(int i, int nb, int div, char *str)
+{
+	while (div)
+	{
+		str[i++] = nb / div + '0';
+		nb = nb % div;
+		div = div / 10;
+	}
+}
+
+char	*ft_itoa(int nbr)
 {
 	char	*str;
 	int		i;
@@ -47,12 +57,7 @@ char		*ft_itoa(int nbr)
 	div = 1;
 	while (nb / div > 9)
 		div *= 10;
-	while (div)
-	{
-		str[i++] = nb / div + '0';
-		nb = nb % div;
-		div = div / 10;
-	}
+	norme_itoa(i, nb, div, str);
 	str[i] = '\0';
 	return (str);
 }

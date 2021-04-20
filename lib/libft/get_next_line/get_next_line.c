@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 10:26:18 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/15 16:23:39 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/20 15:41:29 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,8 @@ static char	*free_reste(char *reste, int *ret, int j)
 	int		i;
 
 	*ret = 0;
-	if ((i = is_line(reste)) < 0)
+	i = is_line(reste);
+	if (i < 0)
 	{
 		if (i == -1)
 			free(reste);
@@ -80,11 +81,7 @@ static char	*free_reste(char *reste, int *ret, int j)
 		return (0);
 	}
 	i++;
-	while (reste[i + j])
-	{
-		new[j] = reste[i + j];
-		j++;
-	}
+	norme_gnl(reste, i, &j, new);
 	new[j] = '\0';
 	free(reste);
 	return (new);
@@ -92,18 +89,23 @@ static char	*free_reste(char *reste, int *ret, int j)
 
 static int	get_next_l(int fd, char **line, unsigned int size)
 {
-	char		buff[size + 1];
+	char		buff[BUFFER_SIZE + 1];
 	static char	*reste[FOPEN_MAX];
 	int			ret;
 
 	if (read(fd, buff, 0) < 0)
 		return (-1);
 	*line = NULL;
-	ret = 0;
-	while (is_line(reste[fd]) < 0 && (ret = read(fd, buff, size)))
-		if (!(reste[fd] = ft_strjoinplus(reste[fd], buff, ret)))
+	ret = 1;
+	while (is_line(reste[fd]) < 0 && ret)
+	{
+		ret = read(fd, buff, size);
+		reste[fd] = ft_strjoinplus(reste[fd], buff, ret);
+		if (!reste[fd])
 			return (-1);
-	if (!(*line = get_line(reste[fd])))
+	}
+	*line = get_line(reste[fd]);
+	if (!*line)
 		return (-1);
 	reste[fd] = free_reste(reste[fd], &ret, 0);
 	if (!reste[fd])
@@ -111,12 +113,13 @@ static int	get_next_l(int fd, char **line, unsigned int size)
 	return (1);
 }
 
-int			get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	unsigned int	size;
 
 	if (BUFFER_SIZE <= 0 || !line || fd > FOPEN_MAX)
 		return (-1);
 	size = BUFFER_SIZE;
+	size += 1;
 	return (get_next_l(fd, line, size));
 }

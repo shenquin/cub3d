@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   strjoin.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/15 15:49:08 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/15 16:25:44 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/20 13:52:58 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int i;
-	int j;
-	int len;
-	char *dest;
+	int		i;
+	int		j;
+	int		len;
+	char	*dest;
 
 	i = 0;
 	j = 0;

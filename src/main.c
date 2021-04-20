@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:03:58 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/16 16:59:54 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/20 16:02:23 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,17 @@ void	test(t_data data)
 
 	printf("pos_x = %d\n", data.pos_x);
 	printf("pos_y = %d\n", data.pos_y);
-	printf("fl_r = %d\n", data.fl_r);
-	printf("fl_g = %d\n", data.fl_g);
-	printf("fl_b = %d\n", data.fl_b);
 	printf("ce_r = %d\n", data.ce_r);
 	printf("ce_g = %d\n", data.ce_g);
 	printf("ce_b = %d\n", data.ce_b);
+	printf("fl_r = %d\n", data.fl_r);
+	printf("fl_g = %d\n", data.fl_g);
+	printf("fl_b = %d\n", data.fl_b);
 	printf("NO = %s\n", data.NO);
 	printf("SO = %s\n", data.SO);
 	printf("WE = %s\n", data.WE);
 	printf("EA = %s\n", data.EA);
 	printf("sprite = %s\n", data.sprite);
-	printf("map_argnb = %d\n", data.map_argnb);
 
 	/*while (data.map[x])
 	{
@@ -51,9 +50,17 @@ int	main(int ac, char **av)
 		exit_error("Invalid arguments number");
 	while ((get_next_line(fd, &line)) > 0)
 	{
+		//printf("%s\n", line);
 		parsing(data, line);
 	}
 	check_data(data);
 	test(*data);
 	return (0);
 }
+
+
+/*
+** C/F si depasse 255
+** C/F si ya plusieurs ,
+** random line
+*/

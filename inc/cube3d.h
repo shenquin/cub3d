@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cube3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:28:07 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/16 16:56:21 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/20 14:08:41 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 # define INT_MAX 2148473647
 
-#include "../lib/libft/inc/libft.h"
-#include "../lib/minilibx/mlx.h"
-#include "../lib/libft/get_next_line/get_next_line.h"
+# include "../lib/libft/inc/libft.h"
+# include "../lib/minilibx/mlx.h"
+# include "../lib/libft/get_next_line/get_next_line.h"
 
-typedef struct	s_data
+typedef struct s_data
 {
 	unsigned int			pos_x;
 	unsigned int			pos_y;
@@ -39,13 +39,13 @@ typedef struct	s_data
 	void					*mlx_ptr;
 }				t_data;
 
-typedef struct	s_utils
+typedef struct s_utils
 {
 	int			i;
 	int			nb_line;
 }				t_utils;
 
-typedef struct		s_pain
+typedef struct s_pain
 {
 	void			*content;
 	struct s_chain	*next;

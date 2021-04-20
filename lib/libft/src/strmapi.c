@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   strmapi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 13:04:42 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/15 16:26:00 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/20 13:56:04 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (!s || !f)
 		return (NULL);
-	str = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!str)
 		return (NULL);
 	i = 0;

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+         #
+#    By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/15 13:17:14 by thgillai          #+#    #+#              #
-#    Updated: 2021/04/15 16:07:38 by thgillai         ###   ########.fr        #
+#    Updated: 2021/04/20 14:24:00 by thgillai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRCS =		atoi.c strlen.c isalpha.c isdigit.c strchr.c putstr_fd.c \
 			strmapi.c split.c ispace.c strcpy.c \
 			../get_next_line/get_next_line.c \
 			../get_next_line/get_next_line_utils.c \
+			../get_next_line/norme_file.c \
 
 
 OBJS =		${addprefix ${SRCDIR}, ${SRCS:.c=.o}}

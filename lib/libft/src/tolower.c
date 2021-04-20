@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   tolower.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 14:42:04 by thgillai          #+#    #+#             */
-/*   Updated: 2021/03/15 14:26:13 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/20 12:56:39 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
 	if ((c >= 'A' && c <= 'Z'))
 		return (c + 32);

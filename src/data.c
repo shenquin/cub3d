@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   data.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 12:03:19 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/16 16:57:00 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/20 14:09:24 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	screen(t_data *data)
 {
-	int max_x;
-	int max_y;
+	int	max_x;
+	int	max_y;
 
 	mlx_get_screen_size(data->mlx_ptr, &max_x, &max_y);
 	if (data->pos_x > (unsigned int)max_x || data->pos_x > INT_MAX)
@@ -26,7 +26,7 @@ void	screen(t_data *data)
 
 void	fl(char *line, t_data *data)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	check_cefl(&line[i]);
@@ -44,7 +44,7 @@ void	fl(char *line, t_data *data)
 
 void	ce(char *line, t_data *data)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	check_cefl(&line[i]);
@@ -62,7 +62,7 @@ void	ce(char *line, t_data *data)
 
 void	res(char *line, t_data *data)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	data->pos_x = ft_atoi2(line);

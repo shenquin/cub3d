@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strlen.c                                           :+:      :+:    :+:   */
+/*   norme_file.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/12 14:02:46 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/20 13:55:43 by thgillai         ###   ########.fr       */
+/*   Created: 2021/04/20 14:19:01 by thgillai          #+#    #+#             */
+/*   Updated: 2021/04/20 14:27:26 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/libft.h"
 
-size_t	ft_strlen(const char *str)
+void	norme_gnl(char *reste, int i, int *j, char *new)
 {
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	while (reste[i + *j])
+	{
+		new[*j] = reste[i + *j];
+		(*j)++;
+	}
 }

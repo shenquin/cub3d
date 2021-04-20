@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 10:45:09 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/12 13:50:33 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/20 12:01:45 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int		ft_strlen2(char *str)
+int	ft_strlen2(char *str)
 {
 	int	i;
 
@@ -24,7 +24,7 @@ int		ft_strlen2(char *str)
 	return (i);
 }
 
-int		is_line(char *save)
+int	is_line(char *save)
 {
 	int	i;
 
