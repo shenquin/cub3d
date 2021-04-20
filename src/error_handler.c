@@ -6,11 +6,11 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 13:43:33 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/20 16:05:28 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/20 16:54:15 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cube3d.h"
+#include "../inc/cub3d.h"
 
 void	check_cefl(char *line)
 {

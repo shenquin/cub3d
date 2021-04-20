@@ -6,11 +6,11 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:50:35 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/20 14:15:40 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/20 16:54:11 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cube3d.h"
+#include "../inc/cub3d.h"
 
 int	ft_atoi2(const char *str)
 {

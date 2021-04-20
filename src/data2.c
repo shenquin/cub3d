@@ -6,11 +6,11 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 13:32:09 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/20 15:53:04 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/20 16:54:18 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cube3d.h"
+#include "../inc/cub3d.h"
 
 void	north(char *line, t_data *data)
 {

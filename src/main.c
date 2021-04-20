@@ -6,11 +6,11 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:03:58 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/20 16:02:23 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/20 16:53:34 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cube3d.h"
+#include "../inc/cub3d.h"
 
 void	test(t_data data)
 {
