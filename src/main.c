@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:03:58 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/20 16:53:34 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/21 11:31:28 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ int	main(int ac, char **av)
 		exit_error("Invalid arguments number");
 	while ((get_next_line(fd, &line)) > 0)
 	{
-		//printf("%s\n", line);
 		parsing(data, line);
 	}
 	check_data(data);
@@ -60,7 +59,5 @@ int	main(int ac, char **av)
 
 
 /*
-** C/F si depasse 255
 ** C/F si ya plusieurs ,
-** random line
 */

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_handler.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 13:43:33 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/20 16:54:15 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/21 12:00:49 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,20 @@ void	check_data(t_data *data)
 		exit_error("Invalid floor");
 	if (data->ce_r > 255 || data->ce_g > 255 || data->ce_b > 255)
 		exit_error("Invalid ceiling");
+}
+
+void	check_comma(char *line)
+{
+	int	i;
+	int	nb_comma;
+
+	i = 0;
+	nb_comma = 0;
+	while (line[i])
+		if (line[i++] == ',')
+			nb_comma++;
+	if (nb_comma != 2)
+		exit_error("invalid ceiling or floor");
 }
 
 void	exit_error(char *error_string)
