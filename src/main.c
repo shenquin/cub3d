@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:03:58 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/21 11:31:28 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/22 16:07:09 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,32 @@
 
 void	test(t_data data)
 {
-	//int x = 0;
+	// int x = 0;
 
-	printf("pos_x = %d\n", data.pos_x);
-	printf("pos_y = %d\n", data.pos_y);
-	printf("ce_r = %d\n", data.ce_r);
-	printf("ce_g = %d\n", data.ce_g);
-	printf("ce_b = %d\n", data.ce_b);
-	printf("fl_r = %d\n", data.fl_r);
-	printf("fl_g = %d\n", data.fl_g);
-	printf("fl_b = %d\n", data.fl_b);
-	printf("NO = %s\n", data.NO);
-	printf("SO = %s\n", data.SO);
-	printf("WE = %s\n", data.WE);
-	printf("EA = %s\n", data.EA);
-	printf("sprite = %s\n", data.sprite);
+	printf("R %d %d\n\n", data.pos_x, data.pos_y);
+	printf("NO %s\n", data.NO);
+	printf("SO %s\n", data.SO);
+	printf("WE %s\n", data.WE);
+	printf("EA %s\n\n", data.EA);
+	printf("S %s\n", data.sprite);
+	printf("C %d,%d,%d\n", data.ce_r, data.ce_g, data.ce_b);
+	printf("F %d,%d,%d\n\n", data.fl_r,data.fl_g,data.fl_b);
 
-	/*while (data.map[x])
+	// while (data.map[x])
+	// {
+	// 	ft_putstr_fd(data.map[x], 1);
+	// 	x++;
+	// }
+	for (int i = 0; i < data.nb_line; i++)
 	{
-		ft_putstr_fd(data.map[x], 1);
-		x++;
-	}*/
+		printf("%s", data.map[i]);
+		/*for (int j = 0; j < 25; j++)
+		{
+			//data.map[i][j] = '.';
+			printf("%c", data.map[i][j]);
+		}*/
+		printf("\n");
+	}
 }
 
 int	main(int ac, char **av)
@@ -48,6 +53,8 @@ int	main(int ac, char **av)
 	data = ft_calloc2(sizeof(t_data));
 	if (ac != 2)
 		exit_error("Invalid arguments number");
+	allocmap(data, fd);
+	fd = open(av[1], O_RDONLY);
 	while ((get_next_line(fd, &line)) > 0)
 	{
 		parsing(data, line);
@@ -56,8 +63,3 @@ int	main(int ac, char **av)
 	test(*data);
 	return (0);
 }
-
-
-/*
-** C/F si ya plusieurs ,
-*/

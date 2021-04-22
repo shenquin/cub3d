@@ -3,14 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:50:35 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/20 16:54:11 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/22 16:29:15 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cub3d.h"
+
+void checkifmap(char *line, t_data *data)
+{
+	int i;
+
+	i = 0;
+	printf("debug");
+	while (ft_ispace(line[i]))
+	{
+		i++;
+	}
+	if (line[i] == '1')
+		parsemap(line, data);
+	else
+		exit_error("Parsing data error");
+}
 
 int	ft_atoi2(const char *str)
 {

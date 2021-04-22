@@ -3,37 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   parsemap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 14:35:41 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/20 16:53:36 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/22 16:39:38 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cub3d.h"
-void	allocmap(char *line, t_data *data)
-{
-	t_utils	*utils;
 
-	utils = ft_calloc2(sizeof(t_utils));
-	data->map[utils->i] = malloc(sizeof(char *) * ft_strlen(line));
-	printf ("debug1\n");
-	printf ("debug2\n");
-	parsemap(line, data, utils);
+void	allocmap(t_data *data, int fd)
+{
+	int i;
+	char *line2;
+
+	i = 0;
+	line2 = NULL;
+	while (get_next_line(fd, &line2) > 0)
+		if (line2[0] == '1')
+			data->nb_line++;
+	data->map = malloc(sizeof(char*) * data->nb_line);
+	if (!data->map)
+		exit_error("fail with memory allocation");
 }
 
-void	parsemap(char *line, t_data *data, t_utils *utils)
+void	parsemap(char *line, t_data *data)
 {
-	int	j;
+	int j;
 
 	j = 0;
-	utils = ft_calloc2(sizeof(t_utils));
-	//data->map[utils->i];
-	while (line[j])
-	{
-		data->map[utils->i][j] = line[j];
-		printf("i = %d j = %d\n", utils->i, j);
-		j++;
-	}
-	utils->i++;
+	data->map[data->line_place] = ft_strdup(line);
+	data->line_place++;
 }

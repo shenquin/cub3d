@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:28:07 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/21 11:59:41 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/22 16:22:56 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,35 +21,25 @@
 
 typedef struct s_data
 {
-	unsigned int			pos_x;
-	unsigned int			pos_y;
-	int						ce_r;
-	int						ce_g;
-	int						ce_b;
-	int						fl_r;
-	int						fl_g;
-	int						fl_b;
-	int						map_argnb;
-	char					*NO;
-	char					*SO;
-	char					*WE;
-	char					*EA;
-	char					*sprite;
-	char					**map;
-	void					*mlx_ptr;
+	unsigned int	pos_x;
+	unsigned int	pos_y;
+	int				ce_r;
+	int				ce_g;
+	int				ce_b;
+	int				fl_r;
+	int				fl_g;
+	int				fl_b;
+	int				map_argnb;
+	int				nb_line;
+	int				line_place;
+	char			*NO;
+	char			*SO;
+	char			*WE;
+	char			*EA;
+	char			*sprite;
+	char			**map;
+	void			*mlx_ptr;
 }				t_data;
-
-typedef struct s_utils
-{
-	int			i;
-	int			nb_line;
-}				t_utils;
-
-typedef struct s_pain
-{
-	void			*content;
-	struct s_chain	*next;
-}					t_pain;
 
 void	parsing(t_data *data, char *line);
 void	parsing2(t_data *data, char *line);
@@ -63,13 +53,14 @@ void	south(char *line, t_data *data);
 void	west(char *line, t_data *data);
 void	east(char *line, t_data *data);
 void	sprite(char *line, t_data *data);
-void	parsemap(char *line, t_data *data, t_utils *utils);
-void	allocmap(char *line, t_data *data);
+void	parsemap(char *line, t_data *data);
+void	allocmap(t_data *data, int fd);
 void	fl(char *line, t_data *data);
 void	ce(char *line, t_data *data);
 int		ft_atoi2(const char *str);
 void	check_data(t_data *data);
 void	check_cefl(char *line);
 void	check_comma(char *line);
+void checkifmap(char *line, t_data *data);
 
 #endif
