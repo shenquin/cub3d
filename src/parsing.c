@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:19:53 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/22 16:39:45 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/23 10:28:59 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,10 @@ void	parsing(t_data *data, char *line)
 			exit_error("Invalid map");
 		parsemap(line, data);
 	}
-	/*else if (line[0] == ' ')
+	else if (line[0] == ' ')
 	{
 		checkifmap(line, data);
-	}*/
+	}
 	else if (line[0] == 0)
 		return ;
 	else

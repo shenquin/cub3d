@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:03:58 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/22 16:07:09 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/23 10:58:21 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,9 @@ void	test(t_data data)
 	printf("C %d,%d,%d\n", data.ce_r, data.ce_g, data.ce_b);
 	printf("F %d,%d,%d\n\n", data.fl_r,data.fl_g,data.fl_b);
 
-	// while (data.map[x])
-	// {
-	// 	ft_putstr_fd(data.map[x], 1);
-	// 	x++;
-	// }
 	for (int i = 0; i < data.nb_line; i++)
 	{
 		printf("%s", data.map[i]);
-		/*for (int j = 0; j < 25; j++)
-		{
-			//data.map[i][j] = '.';
-			printf("%c", data.map[i][j]);
-		}*/
 		printf("\n");
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsemap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 14:35:41 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/22 16:39:38 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/23 10:40:12 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	allocmap(t_data *data, int fd)
 	i = 0;
 	line2 = NULL;
 	while (get_next_line(fd, &line2) > 0)
-		if (line2[0] == '1')
+		if (line2[0] == '1' || (line2[0] == ' ' && checkifmap2(line2)))
 			data->nb_line++;
 	data->map = malloc(sizeof(char*) * data->nb_line);
 	if (!data->map)
@@ -29,9 +29,7 @@ void	allocmap(t_data *data, int fd)
 
 void	parsemap(char *line, t_data *data)
 {
-	int j;
-
-	j = 0;
+	verifmapline(line);
 	data->map[data->line_place] = ft_strdup(line);
 	data->line_place++;
 }

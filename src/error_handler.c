@@ -3,14 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   error_handler.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 13:43:33 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/21 12:00:49 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/23 10:55:49 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cub3d.h"
+
+void	verifmapline(char *line)
+{
+	int i;
+	
+	i = 0;
+	while (line[i])
+	{
+		if (line[i] != '0' && line[i] != '1' & line[i] != '2' && line[i] != 'N'
+		&& line[i] != 'S' && line[i] != 'W' && line[i] != 'E')
+			exit_error("invalid map");
+		i++;
+	}
+	if (line[i - 1] != '1')
+		exit_error("map error");
+}
 
 void	check_cefl(char *line)
 {
@@ -39,6 +55,9 @@ void	check_cefl(char *line)
 
 void	check_data(t_data *data)
 {
+	int j;
+
+	j = 0;
 	if (data->pos_x == 0 || data->pos_y == 0)
 		exit_error("Invalid resolution");
 	if (data->map_argnb < 8)
@@ -47,6 +66,19 @@ void	check_data(t_data *data)
 		exit_error("Invalid floor");
 	if (data->ce_r > 255 || data->ce_g > 255 || data->ce_b > 255)
 		exit_error("Invalid ceiling");
+	while (data->map[0][j])
+	{
+		if (data->map[0][j] != '1')
+			exit_error("invalid map");
+		j++;
+	}
+	j = 0;
+	while (data->map[data->nb_line - 1][j])
+	{
+		if (data->map[data->nb_line - 1][j] != '1')
+			exit_error("invalid map");
+		j++;
+	}
 }
 
 void	check_comma(char *line)

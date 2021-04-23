@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:28:07 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/22 16:22:56 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/23 11:10:53 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,12 @@ int		ft_atoi2(const char *str);
 void	check_data(t_data *data);
 void	check_cefl(char *line);
 void	check_comma(char *line);
-void checkifmap(char *line, t_data *data);
+void	checkifmap(char *line, t_data *data);
+int		checkifmap2(char *line);
+void	verifmapline(char *line);
 
 #endif
+
+// /!\ position map
+// /!\ probleme trou map 
+// /!\ probleme map ligne vide au milieu  
