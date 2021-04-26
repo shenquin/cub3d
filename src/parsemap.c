@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsemap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 14:35:41 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/23 10:40:12 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/23 12:27:18 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,21 @@ void	allocmap(t_data *data, int fd)
 
 void	parsemap(char *line, t_data *data)
 {
+	int i;
+
+	i = 0;
+	while (line[i])
+	{
+		if (line[i] == 'N' || line[i] == 'S' || line[i] == 'W'
+		|| line[i] == 'E')
+		{
+			if (data->position == 0)
+				data->position = line[i];
+			else
+				exit_error("Too much spawn");
+		}
+		i++;
+	}
 	verifmapline(line);
 	data->map[data->line_place] = ft_strdup(line);
 	data->line_place++;

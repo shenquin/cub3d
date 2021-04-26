@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:28:07 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/23 11:10:53 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/23 14:07:11 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct s_data
 	char			*EA;
 	char			*sprite;
 	char			**map;
+	char			position;
 	void			*mlx_ptr;
 }				t_data;
 
@@ -64,9 +65,10 @@ void	check_comma(char *line);
 void	checkifmap(char *line, t_data *data);
 int		checkifmap2(char *line);
 void	verifmapline(char *line);
+void	checkifhole(t_data *data);
+void	check_data2(t_data *data);
 
 #endif
 
-// /!\ position map
 // /!\ probleme trou map 
 // /!\ probleme map ligne vide au milieu  
