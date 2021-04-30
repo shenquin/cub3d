@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 13:43:33 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/23 14:34:48 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/04/30 13:46:49 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,4 @@ void	check_comma(char *line)
 			nb_comma++;
 	if (nb_comma != 2)
 		exit_error("invalid ceiling or floor");
-}
-
-void	exit_error(char *error_string)
-{
-	ft_putstr_fd(error_string, 1);
-	ft_putstr_fd(", cub3d can't launch.\n", 1);
-	exit(0);
 }
