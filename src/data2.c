@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   data2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 13:32:09 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/20 16:54:18 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/06/15 15:36:39 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,20 +69,5 @@ void	east(char *line, t_data *data)
 	img = mlx_xpm_file_to_image(mlx, data->EA, &img_width, &img_height);
 	if (img == NULL)
 		exit_error("Invalid EA path");
-	data->map_argnb += 1;
-}
-
-void	sprite(char *line, t_data *data)
-{
-	void	*mlx;
-	void	*img;
-	int		img_width;
-	int		img_height;
-
-	mlx = mlx_init();
-	data->sprite = ft_strtrim(line, " ");
-	img = mlx_xpm_file_to_image(mlx, data->sprite, &img_width, &img_height);
-	if (img == NULL)
-		exit_error("Invalid sprite path");
 	data->map_argnb += 1;
 }

@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 13:43:33 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/30 13:46:49 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/06/15 15:29:14 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,7 @@ void	check_data2(t_data *data)
 
 void	check_data(t_data *data)
 {
-	if (data->pos_x == 0 || data->pos_y == 0)
-		exit_error("Invalid resolution");
-	if (data->map_argnb < 8)
+	if (data->map_argnb < 6)
 		exit_error("too few arguments in .cub file");
 	if (data->fl_r > 255 || data->fl_g > 255 || data->fl_b > 255)
 		exit_error("Invalid floor");

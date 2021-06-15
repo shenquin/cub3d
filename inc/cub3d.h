@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:28:07 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/23 14:07:11 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/06/15 15:37:11 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@
 
 typedef struct s_data
 {
-	unsigned int	pos_x;
-	unsigned int	pos_y;
 	int				ce_r;
 	int				ce_g;
 	int				ce_b;
@@ -36,7 +34,6 @@ typedef struct s_data
 	char			*SO;
 	char			*WE;
 	char			*EA;
-	char			*sprite;
 	char			**map;
 	char			position;
 	void			*mlx_ptr;

@@ -5,7 +5,6 @@ SO ./textures/mur2.xpm
 WE ./textures/sol.xpm
 EA ./textures/wolf/redbrick.xpm
 
-S ./textures/wolf/barrel.xpm
 C 0,225,243
 F 224,205,169
 

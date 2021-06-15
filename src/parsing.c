@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:19:53 by thgillai          #+#    #+#             */
-/*   Updated: 2021/04/23 10:28:59 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/06/15 15:28:51 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,7 @@
 
 void	parsing(t_data *data, char *line)
 {
-	if (line[0] == 'R' && line[1] == ' ')
-	{
-		if (data->pos_x != 0 || data->pos_y != 0)
-			exit_error("Too much R field");
-		res(&line[1], data);
-	}
-	else if (line[0] == 'N' && line[1] == 'O' && line[2] == ' ')
+	if (line[0] == 'N' && line[1] == 'O' && line[2] == ' ')
 	{
 		if (data->NO != NULL)
 			exit_error("Too much NO field");
@@ -44,12 +38,6 @@ void	parsing(t_data *data, char *line)
 			exit_error("Too much EA field");
 		east(&line[2], data);
 	}
-	else if (line[0] == 'S' && line[1] == ' ')
-	{
-		if (data->sprite != NULL)
-			exit_error("Too much S field");
-		sprite(&line[1], data);
-	}
 	else if (line[0] == 'C' && line[1] == ' ')
 	{
 		check_comma(line);
@@ -66,7 +54,7 @@ void	parsing(t_data *data, char *line)
 	}
 	else if (line[0] == '1')
 	{
-		if (data->map_argnb != 8)
+		if (data->map_argnb != 6)
 			exit_error("Invalid map");
 		parsemap(line, data);
 	}
