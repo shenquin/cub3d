@@ -6,11 +6,28 @@
 /*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:03:58 by thgillai          #+#    #+#             */
-/*   Updated: 2021/06/16 11:26:41 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/06/16 12:01:51 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/cub3d.h"
+
+void	ext_verif(char *av)
+{
+	int i;
+	int j;
+	char *ext;
+
+	j = 0;
+	i = ft_strlen(av);
+	ext = malloc(sizeof(char) * 4);
+	if (!ext)
+		exit_error("Malloc failed");
+	while (j < 4)
+		ext[j++] = av [--i];
+	if (ft_strncmp(ext, "buc.", 1) != 0)
+		exit_error("Wrong map extension");
+}
 
 void	test(t_data data)
 {
@@ -42,6 +59,7 @@ int	main(int ac, char **av)
 		exit_error("Invalid arguments number");
 	allocmap(data, fd);
 	fd = open(av[1], O_RDONLY);
+	ext_verif(av[1]);
 	while ((get_next_line(fd, &line)) > 0)
 	{
 		parsing(data, line);
