@@ -6,18 +6,18 @@
 #    By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/29 14:23:23 by thgillai          #+#    #+#              #
-#    Updated: 2021/06/07 15:21:14 by thgillai         ###   ########.fr        #
+#    Updated: 2021/06/16 11:29:36 by thgillai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCNAME =	src/main.c\
-			src/parsing.c \
-			src/error_handler.c \
-			src/utils.c \
-			src/data.c \
-			src/data2.c \
-			src/parsemap.c \
-			src/error_handler2.c \
+SRCNAME =	src/main/main.c\
+			src/parsing/parsing.c \
+			src/utils/error_handler.c \
+			src/utils/utils.c \
+			src/parsing/data.c \
+			src/parsing/data2.c \
+			src/parsing/parsemap.c \
+			src/utils/error_handler2.c \
 
 SRCS	= ${SRCNAME}
 

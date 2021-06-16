@@ -1,7 +1,6 @@
-R 720 480
 
 NO ./textures/mur1.xpm
-SO ./textures/mur0.xpm
+SO ./textures/mur2.xpm
 WE ./textures/sol.xpm
 EA ./textures/wolf/redbrick.xpm
 
