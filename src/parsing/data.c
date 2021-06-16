@@ -6,11 +6,11 @@
 /*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 12:03:19 by thgillai          #+#    #+#             */
-/*   Updated: 2021/06/15 15:36:09 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/06/16 11:26:45 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3d.h"
+#include "../../inc/cub3d.h"
 
 void	fl(char *line, t_data *data)
 {
