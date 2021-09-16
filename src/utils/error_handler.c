@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 13:43:33 by thgillai          #+#    #+#             */
-/*   Updated: 2021/06/16 11:27:08 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/09/16 14:55:38 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	check_data2(t_data *data)
 void	check_data(t_data *data)
 {
 	if (data->map_argnb < 6)
-		exit_error("too few arguments in .cub file");
+		exit_error("Too few arguments in .cub file");
 	if (data->fl_r > 255 || data->fl_g > 255 || data->fl_b > 255)
 		exit_error("Invalid floor");
 	if (data->ce_r > 255 || data->ce_g > 255 || data->ce_b > 255)
