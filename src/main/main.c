@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:03:58 by thgillai          #+#    #+#             */
-/*   Updated: 2021/09/16 15:10:30 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/09/17 15:30:38 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ void	test(t_data data)
 	printf("WE %s\n", data.WE);
 	printf("EA %s\n\n", data.EA);
 	printf("C %d,%d,%d\n", data.ce_r, data.ce_g, data.ce_b);
-	printf("F %d,%d,%d\n\n", data.fl_r,data.fl_g,data.fl_b);
-
+	printf("F %d,%d,%d\n\n", data.fl_r, data.fl_g, data.fl_b);
 	for (int i = 0; i < data.nb_line; i++)
 	{
 		printf("%s", data.map[i]);
