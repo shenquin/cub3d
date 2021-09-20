@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsemap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 14:35:41 by thgillai          #+#    #+#             */
-/*   Updated: 2021/09/17 15:41:57 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/09/20 13:20:50 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,5 @@ void	parsemap(char *line, t_data *data)
 	verifmapline(line);
 	data->map[data->line_place] = ft_strdup(line);
 	data->line_place++;
+	data->existmap = 1;
 }

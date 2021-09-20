@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:28:07 by thgillai          #+#    #+#             */
-/*   Updated: 2021/09/17 15:11:34 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/09/20 13:20:20 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ typedef struct s_data
 	char			position;
 	void			*mlx_ptr;
 	int				nb_map;
+	int				existmap;
 }				t_data;
 
 void	parsing(t_data *data, char *line);
@@ -85,8 +86,6 @@ void	checkifhole(t_data *data);
 void	check_data2(t_data *data);
 int		ft_visible(t_list *list);
 int		ft_esc(t_list *list);
+void	emptylineinmap(t_data *data);
 
 #endif
-
-// /!\ probleme trou map
-// /!\ probleme map ligne vide au milieu

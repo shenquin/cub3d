@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:03:58 by thgillai          #+#    #+#             */
-/*   Updated: 2021/09/17 15:30:38 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/09/20 13:14:01 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,11 @@ int	main(int ac, char **av)
 	allocmap(data, fd);
 	fd = open(av[1], O_RDONLY);
 	while ((get_next_line(fd, &line)) > 0)
+	{
+		if (!line[0])
+			emptylineinmap(data);
 		parsing(data, line);
+	}
 	check_data(data);
 	checkifhole(data);
 	test(*data);

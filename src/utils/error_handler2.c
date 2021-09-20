@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_handler2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 13:45:17 by thgillai          #+#    #+#             */
-/*   Updated: 2021/09/17 15:38:15 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/09/20 13:21:34 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,6 @@ void	checkifhole(t_data *data)
 		{
 			if (data->map[i][j] == '0')
 			{
-				printf("up: %c\n", data->map[i + 1][j]);
-				printf("down: %c\n", data->map[i - 1][j]);
-				printf("right: %c\n", data->map[i][j + 1]);
-				printf("left: %c\n", data->map[i][j - 1]);
 				if ((data->map[i][j - 1] == ' ') || (data->map[i][j - 1] == '\n')
 					|| (data->map[i][j + 1] == ' ' || data->map[i][j + 1] == '\n')
 					|| (data->map[i - 1][j] == ' ' || data->map[i - 1][j] == '\n')
@@ -55,4 +51,12 @@ void	checkifhole(t_data *data)
 		}
 		i++;
 	}
+}
+
+void	emptylineinmap(t_data *data)
+{
+	if (data->existmap == 0)
+		return ;
+	else
+		exit_error("Empty line in map");
 }
