@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:03:58 by thgillai          #+#    #+#             */
-/*   Updated: 2021/09/21 09:31:22 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/09/21 12:39:41 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,6 @@ int	main(int ac, char **av)
 	check_data(data);
 	checkifhole(data);
 	test(*data);
+	window(data);
 	return (0);
 }

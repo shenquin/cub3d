@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:28:07 by thgillai          #+#    #+#             */
-/*   Updated: 2021/09/20 13:20:20 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/09/21 12:48:57 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 # define XEVENT_EXIT 17
 
 # define INT_MAX 2148473647
+# define INT_MIN -2148473648
 # define KEYCODE_ESC 53
 # define KEYCODE_UPARROW 126
 # define KEYCODE_DOWNARROW 125
@@ -59,6 +60,17 @@ typedef struct s_data
 	int				existmap;
 }				t_data;
 
+typedef struct s_img
+{
+	void	*mlx;
+	void	*win;
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+}				t_img;
+
 void	parsing(t_data *data, char *line);
 void	parsing2(t_data *data, char *line);
 void	parsing3(t_data *data, char *line);
@@ -87,5 +99,6 @@ void	check_data2(t_data *data);
 int		ft_visible(t_list *list);
 int		ft_esc(t_list *list);
 void	emptylineinmap(t_data *data);
+void	window(void);
 
 #endif

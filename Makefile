@@ -6,7 +6,7 @@
 #    By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/29 14:23:23 by thgillai          #+#    #+#              #
-#    Updated: 2021/09/21 09:12:48 by thgillai         ###   ########.fr        #
+#    Updated: 2021/09/21 12:40:49 by thgillai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRCNAME =	src/main/main.c\
 			src/parsing/data2.c \
 			src/parsing/parsemap.c \
 			src/utils/error_handler2.c \
+			src/ingame/window.c \
 
 SRCS		= ${SRCNAME}
 
