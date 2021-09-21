@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_handler2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 13:45:17 by thgillai          #+#    #+#             */
-/*   Updated: 2021/09/20 13:21:34 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/09/21 09:18:25 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 void	verifmapline(char *line)
 {
-	int i;
-	
+	int	i;
+
 	i = 0;
 	while (line[i])
 	{
 		if (line[i] != '0' && line[i] != '1' && line[i] != '2' && line[i] != 'N'
-		&& line[i] != 'S' && line[i] != 'W' && line[i] != 'E' && line[i] != ' ' )
+			&& line[i] != 'S' && line[i] != 'W'
+			&& line[i] != 'E' && line[i] != ' ' )
 			exit_error("Invalid map");
 		i++;
 	}
@@ -30,8 +31,8 @@ void	verifmapline(char *line)
 
 void	checkifhole(t_data *data)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i < data->nb_line)
@@ -41,10 +42,14 @@ void	checkifhole(t_data *data)
 		{
 			if (data->map[i][j] == '0')
 			{
-				if ((data->map[i][j - 1] == ' ') || (data->map[i][j - 1] == '\n')
-					|| (data->map[i][j + 1] == ' ' || data->map[i][j + 1] == '\n')
-					|| (data->map[i - 1][j] == ' ' || data->map[i - 1][j] == '\n')
-					|| (data->map[i + 1][j] == ' ' || data->map[i + 1][j] == '\n'))
+				if ((data->map[i][j - 1] == ' ')
+					|| (data->map[i][j - 1] == '\n')
+					|| (data->map[i][j + 1] == ' '
+					|| data->map[i][j + 1] == '\n')
+					|| (data->map[i - 1][j] == ' '
+					|| data->map[i - 1][j] == '\n')
+					|| (data->map[i + 1][j] == ' '
+					|| data->map[i + 1][j] == '\n'))
 					exit_error("Hole in map");
 			}
 			j++;

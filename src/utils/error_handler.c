@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_handler.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 13:43:33 by thgillai          #+#    #+#             */
-/*   Updated: 2021/09/16 14:55:38 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/09/21 09:17:08 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	check_cefl(char *line)
 
 void	check_data2(t_data *data)
 {
-	int j;
+	int	j;
 
 	j = 0;
 	while (data->map[0][j])
@@ -51,11 +51,11 @@ void	check_data2(t_data *data)
 	j = 0;
 	while (data->map[data->nb_line - 1][j])
 	{
-		if (data->map[data->nb_line - 1][j] != '1' && data->map[data->nb_line - 1][j] != ' ')
+		if (data->map[data->nb_line - 1][j] != '1'
+			&& data->map[data->nb_line - 1][j] != ' ')
 			exit_error("Invalid map");
 		j++;
 	}
-	//checkifhole(data);
 }
 
 void	check_data(t_data *data)

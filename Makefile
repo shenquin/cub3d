@@ -6,7 +6,7 @@
 #    By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/29 14:23:23 by thgillai          #+#    #+#              #
-#    Updated: 2021/09/17 15:29:26 by thgillai         ###   ########.fr        #
+#    Updated: 2021/09/21 09:12:48 by thgillai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,37 +19,63 @@ SRCNAME =	src/main/main.c\
 			src/parsing/parsemap.c \
 			src/utils/error_handler2.c \
 
-SRCS	= ${SRCNAME}
+SRCS		= ${SRCNAME}
 
-OBJS	= ${SRCS:.c=.o}
+OBJS		= ${SRCS:.c=.o}
 
-NAME	= cub3d
+NAME		= cub3d
 
-CC		= gcc -g -fsanitize=address
-RM		= rm -f
-CFLAGS	= -Wall -Wextra -Werror -I. -I./lib/libft
+CC			= gcc -g -fsanitize=address
+RM			= rm -f
+CFLAGS		= -Wall -Wextra -Werror -I -I./lib/libft
+
+CGREEN		= \033[38;2;0;153;0m
+CRED		= \033[0;31m
+CYELLOW		= \033[0;33m
+CGREY		= \033[38;2;128;128;128m
+CEND		= \033[0m
+
 
 .c.o:
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
-		make -C lib/minilibx
-		make -C lib/libft
+		@echo
+		@echo "$(CYELLOW)Compilation of Libft and minilibx$(CEND)"
+		@echo "$(CGREY)"
+		make -C ./lib/minilibx
+		make -C ./lib/libft
 		cp lib/minilibx/libmlx.dylib .
+		@echo
 		${CC} -o ${NAME} ${OBJS} -L./lib/libft -lft -L. -lmlx -framework OpenGL -framework AppKit
+		@echo "$(CEND)"
+		@echo "$(CGREEN)Compilation done !$(CEND)"
+		@echo
 
-all: 		${NAME}
+all:		${NAME}
 
 clean:
-			make -C lib/libft fclean
-			${RM} ${OBJS} ${NAME}
+		@echo
+		@echo "$(CYELLOW)Deleting .o files$(CEND)"
+		@echo "$(CGREY)"
+		make -C ./lib/libft clean
+		${RM} ${OBJS}
+		@echo "$(CEND)"
+		@echo "$(CGREEN)Deleting done !$(CEND)"
+		@echo
+		@echo
 
 fclean:		clean
-			rm -f screen.bmp
-			${RM} ${NAME}
+		@echo "$(CYELLOW)Deleting libft.a and cub3d$(CEND)"
+		@echo "$(CGREY)"
+		${RM} ${NAME} ./lib/libft/libft.a
+		@echo "$(CEND)"
+		@echo "$(CGREEN)Deleting done !$(CEND)"
+		@echo
+		@echo
 
-re:		fclean all
+re: 		fclean all
 
-c:		all clean
+c: 			all clean
 
-.PHONY:		clean fclean re all
+.PHONY: 	clean fclean all re

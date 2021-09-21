@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:50:35 by thgillai          #+#    #+#             */
-/*   Updated: 2021/09/16 14:49:22 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/09/21 09:18:47 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	checkifmap(char *line, t_data *data)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (ft_ispace(line[i]))
@@ -29,7 +29,7 @@ void	checkifmap(char *line, t_data *data)
 
 int	checkifmap2(char *line)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (ft_ispace(line[i]))
