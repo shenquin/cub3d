@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:28:07 by thgillai          #+#    #+#             */
-/*   Updated: 2021/09/21 12:48:57 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/09/23 16:54:08 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,9 @@
 # include "../lib/minilibx/mlx.h"
 # include "../lib/libft/get_next_line/get_next_line.h"
 
-# define MS 0.1
-# define RS 0.1
-# define TXW 64
-# define TXH 64
-
-# define XEVENT_KEYPRESS 2
-# define XEVENT_KEYRELEASE 3
-# define XEVENT_EXIT 17
+# define KEYPRESS 2
+# define KEYRELEASE 3
+# define EXIT 17
 
 # define INT_MAX 2148473647
 # define INT_MIN -2148473648
@@ -55,6 +50,7 @@ typedef struct s_data
 	char			*EA;
 	char			**map;
 	char			position;
+	int				**pos;
 	void			*mlx_ptr;
 	int				nb_map;
 	int				existmap;
@@ -70,6 +66,11 @@ typedef struct s_img
 	int		line_length;
 	int		endian;
 }				t_img;
+
+typedef struct s_key
+{
+
+}				t_key;
 
 void	parsing(t_data *data, char *line);
 void	parsing2(t_data *data, char *line);
@@ -96,9 +97,10 @@ int		checkifmap2(char *line);
 void	verifmapline(char *line);
 void	checkifhole(t_data *data);
 void	check_data2(t_data *data);
-int		ft_visible(t_list *list);
-int		ft_esc(t_list *list);
 void	emptylineinmap(t_data *data);
 void	window(void);
+int		key_read(int keycode, t_img *img);
+void	move_right(t_key *key);
+void	rot_right(t_key *key);
 
 #endif

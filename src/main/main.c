@@ -50,6 +50,6 @@ int	main(int ac, char **av)
 	check_data(data);
 	checkifhole(data);
 	test(*data);
-	window(data);
+	window();
 	return (0);
 }

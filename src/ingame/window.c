@@ -3,20 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   window.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 12:23:45 by thgillai          #+#    #+#             */
-/*   Updated: 2021/09/21 13:30:06 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/09/23 16:40:38 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/cub3d.h"
-
-/*int	closewin(t_img *img)
-{
-	mlx_destroy_window(img->mlx, img->win);
-	return 0;
-}*/
 
 void	my_mlx_pixel_put(t_img *img, int x, int y, int color)
 {
@@ -33,18 +27,19 @@ void	window(void)
 	img.mlx = mlx_init();
 	if (!(img.win))
 		exit_error("Window creation failed");
-	img.win = mlx_new_window(img.mlx, 1920, 1080, "cub3d");
+	img.win = mlx_new_window(img.mlx, 720, 480, "cub3d");
 	if (!(img.win))
 		exit_error("Window creation failed");
-	img.img = mlx_new_image(img.mlx, 1920, 1080);
+	img.img = mlx_new_image(img.mlx, 720, 480);
 	if (!(img.win))
 		exit_error("Window creation failed");
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel,
 								&img.line_length, &img.endian);
 	if (!(img.win))
 		exit_error("Window creation failed");
-	//raycasting(data, img);
-	my_mlx_pixel_put(&img, 5, 5, 0x000000FF);
 	mlx_put_image_to_window(img.mlx, img.win, img.img, 0, 0);
+	mlx_hook(img.win, KEYPRESS, 1L << 0, key_read, &img);
+	//mlx_hook(img.win, 17, 1L << 17, ft_esc, &img);
+	//mlx_hook(img.win, 15, 1L << 16, ft_visible, &img);
 	mlx_loop(img.mlx);
 }
