@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 14:35:41 by thgillai          #+#    #+#             */
-/*   Updated: 2021/09/20 13:20:50 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/09/27 18:20:45 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,28 @@ void	parsemap(char *line, t_data *data)
 	data->map[data->line_place] = ft_strdup(line);
 	data->line_place++;
 	data->existmap = 1;
+}
+
+int	get_pos(t_data *data, t_img *img)
+{
+	int i;
+	int j;
+
+	i = 0;
+	while (i < data->nb_line)
+	{
+		j = 0;
+		while (data->map[i][j])
+		{
+			if (data->map[i][j] == 'N' || data->map[i][j] == 'S'
+				|| data->map[i][j] == 'W' || data->map[i][j] == 'E')
+			{
+				img->posx = j;
+				img->posy = i;
+			}	
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }

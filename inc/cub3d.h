@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:28:07 by thgillai          #+#    #+#             */
-/*   Updated: 2021/09/23 16:54:08 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/04 14:36:13 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "../lib/libft/inc/libft.h"
 # include "../lib/minilibx/mlx.h"
 # include "../lib/libft/get_next_line/get_next_line.h"
+# include <math.h>
 
 # define KEYPRESS 2
 # define KEYRELEASE 3
@@ -65,12 +66,21 @@ typedef struct s_img
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
+	char	**map;
+	int		posx;
+	int		posy;
+	double	movespeed;
+	double	rotspeed;
+	char	*position;
+	double	planex;
+	double	oldplanex;
+	double	planey;
+	double	dirx;
+	double	olddirx;
+	double	diry;
+	double	pos;
+	int		comptpos;
 }				t_img;
-
-typedef struct s_key
-{
-
-}				t_key;
 
 void	parsing(t_data *data, char *line);
 void	parsing2(t_data *data, char *line);
@@ -98,9 +108,12 @@ void	verifmapline(char *line);
 void	checkifhole(t_data *data);
 void	check_data2(t_data *data);
 void	emptylineinmap(t_data *data);
-void	window(void);
+void	window(t_data *data);
 int		key_read(int keycode, t_img *img);
-void	move_right(t_key *key);
-void	rot_right(t_key *key);
+void	move_right(t_img *img);
+void	rot_right(t_img *img);
+void	move_left(t_img *img);
+void	rot_left(t_img *img);
+int		get_pos(t_data *data, t_img *img);
 
 #endif
