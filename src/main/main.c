@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:03:58 by thgillai          #+#    #+#             */
-/*   Updated: 2021/09/24 16:34:11 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/06 12:05:13 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	test(t_data data)
 {
-	printf("\nNO %s\n", data.NO);
-	printf("SO %s\n", data.SO);
-	printf("WE %s\n", data.WE);
-	printf("EA %s\n\n", data.EA);
+	printf("\nNO %s\n", data.no);
+	printf("SO %s\n", data.so);
+	printf("WE %s\n", data.we);
+	printf("EA %s\n\n", data.ea);
 	printf("C %d,%d,%d\n", data.ce_r, data.ce_g, data.ce_b);
 	printf("F %d,%d,%d\n\n", data.fl_r, data.fl_g, data.fl_b);
 	for (int i = 0; i < data.nb_line; i++)

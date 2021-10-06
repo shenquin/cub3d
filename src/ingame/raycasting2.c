@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_raycasting2.c                                   :+:      :+:    :+:   */
+/*   raycasting2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 18:36:49 by shenquin          #+#    #+#             */
-/*   Updated: 2021/10/04 16:02:01 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/06 11:55:23 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/cub3d.h"
 
-int		walltexture(t_data *data)
+int	walltexture(t_data *data)
 {
 	if (data->side == 0)
 		data->wallx = data->posy + data->perpwalldist * data->raydiry;
@@ -25,8 +25,8 @@ int		walltexture(t_data *data)
 	if (data->side == 1 && data->raydiry < 0)
 		data->texx = data->texwidth - data->texx - 1;
 	data->step = 1.0 * data->texwidth / data->lineheight;
-	data->texpos = (data->drawstart - data->screenheight / 2 +
-			data->lineheight / 2) * data->step;
+	data->texpos = (data->drawstart - data->screenheight / 2
+			+ data->lineheight / 2) * data->step;
 	return (0);
 }
 
@@ -45,7 +45,7 @@ void	verline2(t_data *data, int a, int b)
 	data->addr[b * data->screenwidth + a] = data->color;
 }
 
-void	verline(t_data *data,int a)
+void	verline(t_data *data, int a)
 {
 	int	b;
 

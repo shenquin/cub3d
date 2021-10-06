@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   keyboard.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 13:24:03 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/04 16:37:41 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/06 12:02:09 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	backward(t_data *data)
 {
-	if (data->map[data->posy][(int)(data->posx - data->dirx *
-		data->movespeed)] != '1')
+	if (data->map[data->posy][(int)(data->posx - data->dirx
+		* data->movespeed)] != '1')
 		data->posx -= data->dirx * data->movespeed;
 	if (data->map[(int)(data->posy - data->diry * data->movespeed)]
 		[data->posx] != '1')
@@ -24,8 +24,8 @@ void	backward(t_data *data)
 
 void	foreward(t_data *data)
 {
-	if (data->map[data->posy][(int)(data->posx + data->dirx *
-		data->movespeed)] != '1')
+	if (data->map[data->posy][(int)(data->posx + data->dirx
+		* data->movespeed)] != '1')
 		data->posx += data->dirx * data->movespeed;
 	if (data->map[(int)(data->posy + data->diry * data->movespeed)]
 		[data->posx] != '1')

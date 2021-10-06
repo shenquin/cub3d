@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   window.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 12:23:45 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/04 16:58:53 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/06 11:54:26 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 
 int	get_pos(t_data *data)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i < data->nb_line)
@@ -75,8 +75,8 @@ void	window(t_data *data)
 	data->img = mlx_new_image(data->mlx, 720, 480);
 	if (!(data->img))
 		exit_error("Window creation failed");
-	data->addr = (int*)mlx_get_data_addr(data->img, &data->bits_per_pixel,
-	&data->line_length, &data->endian);
+	data->addr = (int *)mlx_get_data_addr(data->img, &data->bits_per_pixel,
+			&data->line_length, &data->endian);
 	if (!(data->addr))
 		exit_error("Window creation failed");
 	if (raycasting(data) == -1)

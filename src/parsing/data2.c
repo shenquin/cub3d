@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   data2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 13:32:09 by thgillai          #+#    #+#             */
-/*   Updated: 2021/06/16 11:26:49 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/06 12:05:41 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	north(char *line, t_data *data)
 	int		img_height;
 
 	mlx = mlx_init();
-	data->NO = ft_strtrim(line, " ");
-	img = mlx_xpm_file_to_image(mlx, data->NO, &img_width, &img_height);
+	data->no = ft_strtrim(line, " ");
+	img = mlx_xpm_file_to_image(mlx, data->no, &img_width, &img_height);
 	if (img == NULL)
 		exit_error("Invalid NO path");
 	data->map_argnb += 1;
@@ -35,8 +35,8 @@ void	south(char *line, t_data *data)
 	int		img_height;
 
 	mlx = mlx_init();
-	data->SO = ft_strtrim(line, " ");
-	img = mlx_xpm_file_to_image(mlx, data->SO, &img_width, &img_height);
+	data->so = ft_strtrim(line, " ");
+	img = mlx_xpm_file_to_image(mlx, data->so, &img_width, &img_height);
 	if (img == NULL)
 		exit_error("Invalid SO path");
 	data->map_argnb += 1;
@@ -50,8 +50,8 @@ void	west(char *line, t_data *data)
 	int		img_height;
 
 	mlx = mlx_init();
-	data->WE = ft_strtrim(line, " ");
-	img = mlx_xpm_file_to_image(mlx, data->WE, &img_width, &img_height);
+	data->we = ft_strtrim(line, " ");
+	img = mlx_xpm_file_to_image(mlx, data->we, &img_width, &img_height);
 	if (img == NULL)
 		exit_error("Invalid WE path");
 	data->map_argnb += 1;
@@ -65,8 +65,8 @@ void	east(char *line, t_data *data)
 	int		img_height;
 
 	mlx = mlx_init();
-	data->EA = ft_strtrim(line, " ");
-	img = mlx_xpm_file_to_image(mlx, data->EA, &img_width, &img_height);
+	data->ea = ft_strtrim(line, " ");
+	img = mlx_xpm_file_to_image(mlx, data->ea, &img_width, &img_height);
 	if (img == NULL)
 		exit_error("Invalid EA path");
 	data->map_argnb += 1;

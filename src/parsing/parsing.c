@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:19:53 by thgillai          #+#    #+#             */
-/*   Updated: 2021/09/20 13:12:43 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/06 12:05:21 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	parsing2(t_data *data, char *line)
 {
 	if (line[0] == 'E' && line[1] == 'A' && line[2] == ' ')
 	{
-		if (data->EA != NULL)
+		if (data->ea != NULL)
 			exit_error("Too much EA field");
 		east(&line[2], data);
 	}
@@ -57,19 +57,19 @@ void	parsing(t_data *data, char *line)
 {
 	if (line[0] == 'N' && line[1] == 'O' && line[2] == ' ')
 	{
-		if (data->NO != NULL)
+		if (data->no != NULL)
 			exit_error("Too much NO field");
 		north(&line[2], data);
 	}
 	else if (line[0] == 'S' && line[1] == 'O' && line[2] == ' ')
 	{
-		if (data->SO != NULL)
+		if (data->so != NULL)
 			exit_error("Too much SO field");
 		south(&line[2], data);
 	}
 	else if (line[0] == 'W' && line[1] == 'E' && line[2] == ' ')
 	{
-		if (data->WE != NULL)
+		if (data->we != NULL)
 			exit_error("Too much WE field");
 		west(&line[2], data);
 	}

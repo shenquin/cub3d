@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shenquin <shenquin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:28:07 by thgillai          #+#    #+#             */
-/*   Updated: 2021/09/23 16:15:09 by shenquin         ###   ########.fr       */
+/*   Updated: 2021/10/06 12:05:51 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,10 @@ typedef struct s_data
 	int				map_argnb;
 	int				nb_line;
 	int				line_place;
-	char			*NO;
-	char			*SO;
-	char			*WE;
-	char			*EA;
+	char			*no;
+	char			*so;
+	char			*we;
+	char			*ea;
 	char			**map;
 	char			position;
 	void			*mlx_ptr;

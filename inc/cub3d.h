@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:28:07 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/04 16:44:20 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/06 12:04:56 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@
 
 typedef struct s_data
 {
-	/* parsing */
+	// parsing
 	int				ce_r;
 	int				ce_g;
 	int				ce_b;
@@ -46,17 +46,17 @@ typedef struct s_data
 	int				map_argnb;
 	int				nb_line;
 	int				line_place;
-	char			*NO;
-	char			*SO;
-	char			*WE;
-	char			*EA;
+	char			*no;
+	char			*so;
+	char			*we;
+	char			*ea;
 	char			**map;
 	char			position;
 	int				**pos;
 	void			*mlx_ptr;
 	int				nb_map;
 	int				existmap;
-	/* création de l'image */
+	// création de l'image
 	void			*mlx;
 	void			*win;
 	void			*img;
@@ -76,7 +76,7 @@ typedef struct s_data
 	double			diry;
 	double			posi;
 	int				comptpos;
-	/* raycasting */
+	// raycasting
 	double			*zbuffer;
 	double			camerax;
 	double			raydirx;
@@ -146,7 +146,7 @@ void	rot_right(t_data *data);
 void	move_left(t_data *data);
 void	rot_left(t_data *data);
 int		raycasting(t_data *data);
-void	verline(t_data *data,int a);
+void	verline(t_data *data, int a);
 int		walltexture(t_data *data);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 18:36:39 by shenquin          #+#    #+#             */
-/*   Updated: 2021/10/04 17:05:25 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/06 11:58:33 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 void	raycast4(t_data *data)
 {
 	if (data->side == 0)
-		data->perpwalldist = (data->mapx - data->posx +
-		(1 - data->stepx) / 2) / data->raydirx;
+		data->perpwalldist = (data->mapx - data->posx
+				+ (1 - data->stepx) / 2) / data->raydirx;
 	else
-		data->perpwalldist = (data->mapy - data->posy +
-		(1 - data->stepy) / 2) / data->raydiry;
+		data->perpwalldist = (data->mapy - data->posy
+				+ (1 - data->stepy) / 2) / data->raydiry;
 	data->lineheight = (int)(data->screenheight / data->perpwalldist);
 	data->drawstart = -data->lineheight / 2 + data->screenheight / 2;
 	if (data->drawstart < 0)
@@ -86,19 +86,17 @@ void	raycast(t_data *data, int a)
 	data->hit = 0;
 }
 
-int		raycasting(t_data *data)
+int	raycasting(t_data *data)
 {
-	int a;
+	int	a;
 
 	a = 0;
 	data->screenwidth = 720;
 	data->screenheight = 480;
 	printf("\n\n------------------>%d<--------------------\n\n", data->screenwidth);
-	if (!(data->zbuffer = malloc(sizeof(int *) * data->screenwidth + 1)))
-	{
-		write(1, "Error\nzbuffer malloc did not work\n", 34);
-		return (-1);
-	}
+	data->zbuffer = malloc(sizeof(int *) * data->screenwidth + 1);
+	if (!data->zbuffer)
+		exit_error("Fail to alloc zbuffer");
 	while (a < data->screenwidth)
 	{
 		raycast(data, a);
