@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 18:36:39 by shenquin          #+#    #+#             */
-/*   Updated: 2021/10/06 13:05:49 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/06 17:13:51 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,8 +79,8 @@ void	raycast(t_data *data, int a)
 	data->camerax = 2 * a / (double)data->screenwidth - 1;
 	data->raydirx = data->dirx + data->planex * data->camerax;
 	data->raydiry = data->diry + data->planey * data->camerax;
-	data->mapx = data->posx;
-	data->mapy = data->posy;
+	data->mapx = (int)data->posx;
+	data->mapy = (int)data->posy;
 	data->deltadistx = fabs(1 / data->raydirx);
 	data->deltadisty = fabs(1 / data->raydiry);
 	data->hit = 0;

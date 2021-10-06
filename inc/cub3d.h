@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:28:07 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/06 14:14:12 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/06 17:11:23 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,8 @@ typedef struct s_data
 	int				bits_per_pixel;
 	int				line_length;
 	int				endian;
-	int				posx;
-	int				posy;
+	double				posx;
+	double				posy;
 	double			movespeed;
 	double			rotspeed;
 	double			planex;
@@ -153,5 +153,6 @@ int		raycasting(t_data *data);
 void	verline(t_data *data, int a);
 int		walltexture(t_data *data);
 void	assigntextures(t_data *data);
+void	assign_pos(t_data *data);
 
 #endif

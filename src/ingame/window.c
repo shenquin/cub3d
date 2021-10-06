@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 12:23:45 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/06 14:15:29 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/06 17:29:38 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,34 +22,32 @@ int	ft_visible(t_data *data)
 	return (0);
 }
 
-/*int	ft_esc(t_data *data)
+int	ft_esc(t_data *data)
 {
 	(void)data;
 	exit(0);
 	return (0);
 }
 
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+/*void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
-	char	*dst;
-
-	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-	*(unsigned int*)dst = color;
+	(void)color;
+	(data->addr)[y * (data->pxl_line) + x] = color;
 }*/
 
 int	get_pos(t_data *data)
 {
-	int	i;
-	int	j;
+	double	i;
+	double	j;
 
 	i = 0;
 	while (i < data->nb_line)
 	{
 		j = 0;
-		while (data->map[i][j])
+		while (data->map[(int)i][(int)j])
 		{
-			if (data->map[i][j] == 'N' || data->map[i][j] == 'S'
-				|| data->map[i][j] == 'W' || data->map[i][j] == 'E')
+			if (data->map[(int)i][(int)j] == 'N' || data->map[(int)i][(int)j] == 'S'
+				|| data->map[(int)i][(int)j] == 'W' || data->map[(int)i][(int)j] == 'E')
 			{
 				if (data->posx == 0 && data->posy == 0)
 				{
@@ -65,11 +63,15 @@ int	get_pos(t_data *data)
 	return (0);
 }
 
-void	window(t_data *data)
+void	keyread(t_data *data)
 {
-	data->mlx = mlx_init();
-	get_pos(data);
-	assigntextures(data);
+	mlx_hook(data->win, KEYPRESS, 1L << 0, key_read, data);
+	mlx_hook(data->win, 17, 1L << 17, ft_esc, data);
+	mlx_hook(data->win, 15, 1L << 16, ft_visible, data); //???
+}
+
+void	start(t_data *data)
+{
 	data->win = mlx_new_window(data->mlx, 720, 480, "cub3d");
 	if (!(data->win))
 		exit_error("Window creation failed");
@@ -82,9 +84,18 @@ void	window(t_data *data)
 		exit_error("Window creation failed");
 	if (raycasting(data) == -1)
 		exit_error("Window creation failed");
-	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
-	mlx_hook(data->win, KEYPRESS, 1L << 0, key_read, data);
-	// mlx_hook(data->win, 17, 1L << 17, ft_esc, data);
-	mlx_hook(data->win, 15, 1L << 16, ft_visible, data); //???
-	mlx_loop(data->mlx);
+}
+
+void	window(t_data *data)
+{
+	data->mlx = mlx_init();
+	get_pos(data);
+	assign_pos(data);
+	assigntextures(data);
+	while (data->mlx != NULL)
+	{
+		start(data);
+		keyread(data);
+		mlx_loop(data->mlx);
+	}
 }
