@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:28:07 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/06 12:04:56 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/06 14:14:12 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,13 @@ typedef struct s_data
 	int				nb_line;
 	int				line_place;
 	char			*no;
+	void			*imgno;
 	char			*so;
+	void			*imgso;
 	char			*we;
+	void			*imgwe;
 	char			*ea;
+	void			*imgea;
 	char			**map;
 	char			position;
 	int				**pos;
@@ -109,8 +113,8 @@ typedef struct s_data
 	int				*addrso;
 	int				*addrwe;
 	int				*addrea;
-	int				color_sky;
-	int				color_floor;
+	int				color_ce;
+	int				color_fl;
 }					t_data;
 
 void	parsing(t_data *data, char *line);
@@ -148,5 +152,6 @@ void	rot_left(t_data *data);
 int		raycasting(t_data *data);
 void	verline(t_data *data, int a);
 int		walltexture(t_data *data);
+void	assigntextures(t_data *data);
 
 #endif

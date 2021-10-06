@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   data.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 12:03:19 by thgillai          #+#    #+#             */
-/*   Updated: 2021/06/16 11:26:45 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/06 13:23:49 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/cub3d.h"
+
+int	hexa_color(int r, int g, int b)
+{
+	return (r << 16 | g << 8 | b);
+}
 
 void	fl(char *line, t_data *data)
 {
@@ -27,6 +32,7 @@ void	fl(char *line, t_data *data)
 		i++;
 	i++;
 	data->fl_b = ft_atoi(&line[i]);
+	data->color_fl = hexa_color(data->fl_r, data->fl_g, data->fl_b);
 	data->map_argnb += 1;
 }
 
@@ -45,5 +51,6 @@ void	ce(char *line, t_data *data)
 		i++;
 	i++;
 	data->ce_b = ft_atoi(&line[i]);
+	data->color_ce = hexa_color(data->ce_r, data->ce_g, data->ce_b);
 	data->map_argnb += 1;
 }

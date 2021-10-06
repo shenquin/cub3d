@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 18:36:49 by shenquin          #+#    #+#             */
-/*   Updated: 2021/10/06 11:55:23 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/06 13:23:09 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	verline(t_data *data, int a)
 	b = 0;
 	while (b < data->drawstart)
 	{
-		data->addr[b * data->screenwidth + a] = data->color_sky;
+		data->addr[b * data->screenwidth + a] = data->color_ce;
 		b++;
 	}
 	while (b <= data->drawend)
@@ -62,7 +62,7 @@ void	verline(t_data *data, int a)
 	}
 	while (b < data->screenheight)
 	{
-		data->addr[b * data->screenwidth + a] = data->color_floor;
+		data->addr[b * data->screenwidth + a] = data->color_fl;
 		b++;
 	}
 }
