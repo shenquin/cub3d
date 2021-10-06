@@ -6,99 +6,98 @@
 /*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 13:24:03 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/02 19:16:29 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/04 16:37:41 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/cub3d.h"
 
-void	backward(t_img *img)
+void	backward(t_data *data)
 {
-	if (img->map[img->posy][(int)(img->posx - img->dirx *
-		img->movespeed)] != '1')
-		img->posx -= img->dirx * img->movespeed;
-	if (img->map[(int)(img->posy - img->diry * img->movespeed)]
-		[img->posx] != '1')
-		img->posy -= img->diry * img->movespeed;
+	if (data->map[data->posy][(int)(data->posx - data->dirx *
+		data->movespeed)] != '1')
+		data->posx -= data->dirx * data->movespeed;
+	if (data->map[(int)(data->posy - data->diry * data->movespeed)]
+		[data->posx] != '1')
+		data->posy -= data->diry * data->movespeed;
 }
 
-void	foreward(t_img *img)
+void	foreward(t_data *data)
 {
-	if (img->map[img->posy][(int)(img->posx + img->dirx *
-		img->movespeed)] != '1')
-		img->posx += img->dirx * img->movespeed;
-	if (img->map[(int)(img->posy + img->diry * img->movespeed)]
-		[img->posx] != '1')
-		img->posy += img->diry * img->movespeed;
+	if (data->map[data->posy][(int)(data->posx + data->dirx *
+		data->movespeed)] != '1')
+		data->posx += data->dirx * data->movespeed;
+	if (data->map[(int)(data->posy + data->diry * data->movespeed)]
+		[data->posx] != '1')
+		data->posy += data->diry * data->movespeed;
 }
 
-void	assign_pos2(t_img *img)
+void	assign_pos2(t_data *data)
 {
-	if (img->position == 'N')
+	if (data->position == 'N')
 	{
-		img->planex = 0.66;
-		img->planey = 0;
-		img->dirx = 0;
-		img->diry = -1;
-		img->pos = 1;
+		data->planex = 0.66;
+		data->planey = 0;
+		data->dirx = 0;
+		data->diry = -1;
+		data->posi = 1;
 	}
-	if (img->position == 'S')
+	if (data->position == 'S')
 	{
-		img->planex = -0.66;
-		img->planey = 0;
-		img->dirx = 0;
-		img->diry = 1;
-		img->pos = 1;
+		data->planex = -0.66;
+		data->planey = 0;
+		data->dirx = 0;
+		data->diry = 1;
+		data->posi = 1;
 	}
-	img->map[img->posx][img->posy] = '0';
-	img->comptpos = 1;
+	data->map[data->posx][data->posy] = '0';
+	data->comptpos = 1;
 }
 
-void	assign_pos(t_img *img)
+void	assign_pos(t_data *data)
 {
-	img->movespeed = 0.2;
-	img->rotspeed = 0.17;
-	img->posy += 0.5;
-	img->posx += 0.5;
-	printf("%c", img->position);
-	if (img->position == 'E')
+	data->movespeed = 0.2;
+	data->rotspeed = 0.17;
+	data->posy += 0.5;
+	data->posx += 0.5;
+	if (data->position == 'E')
 	{
-		img->planex = 0;
-		img->planey = 0.66;
-		img->dirx = 1;
-		img->diry = 0;
-		img->pos = 1;
+		data->planex = 0;
+		data->planey = 0.66;
+		data->dirx = 1;
+		data->diry = 0;
+		data->posi = 1;
 	}
-	if (img->position == 'W')
+	if (data->position == 'W')
 	{
-		img->planex = 0;
-		img->planey = -0.66;
-		img->dirx = -1;
-		img->diry = 0;
-		img->pos = 1;
+		data->planex = 0;
+		data->planey = -0.66;
+		data->dirx = -1;
+		data->diry = 0;
+		data->posi = 1;
 	}
-	assign_pos2(img);
+	assign_pos2(data);
 }
 
-int	key_read(int keycode, t_img *img)
+int	key_read(int keycode, t_data *data)
 {
-	assign_pos(img);
+	assign_pos(data);
 	if (keycode == KEYCODE_ESC)
 		exit (0);
 	if (keycode == KEYCODE_W || keycode == KEYCODE_UPARROW)
-		foreward(img);
+		foreward(data);
 	if (keycode == KEYCODE_S || keycode == KEYCODE_DOWNARROW)
-		backward(img);
+		backward(data);
 	if (keycode == KEYCODE_A)
-		move_left(img);
+		move_left(data);
 	if (keycode == KEYCODE_LEFTARROW)
-		rot_left(img);
+		rot_left(data);
 	if (keycode == KEYCODE_D)
-		move_right(img);
+		move_right(data);
 	if (keycode == KEYCODE_RIGHTARROW)
-		rot_right(img);
-	//if (raycasting(img) == -1)
-	//	exit_error("raycasting has failed");
-//	mlx_put_image_to_window(img->mlx, img->win, img->img, 0, 0);
+		rot_right(data);
+	if (raycasting(data) == -1)
+		exit_error("raycasting has failed");
+	mlx_put_image_to_window(data->mlx, data->win, data->img, 0, 0);
 	return (0);
 }

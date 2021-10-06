@@ -6,57 +6,57 @@
 /*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/23 16:39:00 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/02 19:14:28 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/04 14:38:57 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/cub3d.h"
 
-void	move_right(t_img *img)
+void	move_right(t_data *data)
 {
-	if (img->map[(int)(img->posy +
-		img->dirx * 0.5)][(int)img->posx] != '1')
-		img->posy += img->dirx * img->movespeed;
-	if (img->map[(int)img->posy][(int)(img->posx -
-		img->diry * 0.5)] != '1')
-		img->posx -= img->diry * img->movespeed;
+	if (data->map[(int)(data->posy +
+		data->dirx * 0.5)][(int)data->posx] != '1')
+		data->posy += data->dirx * data->movespeed;
+	if (data->map[(int)data->posy][(int)(data->posx -
+		data->diry * 0.5)] != '1')
+		data->posx -= data->diry * data->movespeed;
 	
 }
 
-void	rot_right(t_img *img)
+void	rot_right(t_data *data)
 {
-	img->olddirx = img->dirx;
-	img->dirx = img->dirx * cos(img->rotspeed) -
-		img->diry * sin(img->rotspeed);
-	img->diry = img->olddirx * sin(img->rotspeed) +
-		img->diry * cos(img->rotspeed);
-	img->oldplanex = img->planex;
-	img->planex = img->planex * cos(img->rotspeed) -
-		img->planey * sin(img->rotspeed);
-	img->planey = img->oldplanex * sin(img->rotspeed) +
-		img->planey * cos(img->rotspeed);
+	data->olddirx = data->dirx;
+	data->dirx = data->dirx * cos(data->rotspeed) -
+		data->diry * sin(data->rotspeed);
+	data->diry = data->olddirx * sin(data->rotspeed) +
+		data->diry * cos(data->rotspeed);
+	data->oldplanex = data->planex;
+	data->planex = data->planex * cos(data->rotspeed) -
+		data->planey * sin(data->rotspeed);
+	data->planey = data->oldplanex * sin(data->rotspeed) +
+		data->planey * cos(data->rotspeed);
 }
 
-void	rot_left(t_img *img)
+void	rot_left(t_data *data)
 {
-	img->olddirx = img->dirx;
-	img->dirx = img->dirx * cos(-(img->rotspeed)) - img->diry *
-		sin(-(img->rotspeed));
-	img->diry = img->olddirx * sin(-(img->rotspeed)) + img->diry *
-		cos(-(img->rotspeed));
-	img->oldplanex = img->planex;
-	img->planex = img->planex * cos(-(img->rotspeed)) - img->planey *
-		sin(-(img->rotspeed));
-	img->planey = img->oldplanex * sin(-(img->rotspeed)) + img->planey *
-		cos(-(img->rotspeed));
+	data->olddirx = data->dirx;
+	data->dirx = data->dirx * cos(-(data->rotspeed)) - data->diry *
+		sin(-(data->rotspeed));
+	data->diry = data->olddirx * sin(-(data->rotspeed)) + data->diry *
+		cos(-(data->rotspeed));
+	data->oldplanex = data->planex;
+	data->planex = data->planex * cos(-(data->rotspeed)) - data->planey *
+		sin(-(data->rotspeed));
+	data->planey = data->oldplanex * sin(-(data->rotspeed)) + data->planey *
+		cos(-(data->rotspeed));
 }
 
-void	move_left(t_img *img)
+void	move_left(t_data *data)
 {
-	if (img->map[(int)(img->posy -
-		img->dirx * 0.5)][(int)img->posx] != '1')
-		img->posy -= img->dirx * img->movespeed;
-	if (img->map[(int)img->posy][(int)(img->posx +
-		img->diry * 0.5)] != '1')
-		img->posx += img->diry * img->movespeed;
+	if (data->map[(int)(data->posy -
+		data->dirx * 0.5)][(int)data->posx] != '1')
+		data->posy -= data->dirx * data->movespeed;
+	if (data->map[(int)data->posy][(int)(data->posx +
+		data->diry * 0.5)] != '1')
+		data->posx += data->diry * data->movespeed;
 }
