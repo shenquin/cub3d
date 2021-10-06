@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 18:36:39 by shenquin          #+#    #+#             */
-/*   Updated: 2021/10/06 17:13:51 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/06 18:25:20 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,6 @@ int	raycasting(t_data *data)
 	int	a;
 
 	a = 0;
-	data->screenwidth = 720;
-	data->screenheight = 480;
 	data->zbuffer = malloc(sizeof(int *) * data->screenwidth + 1);
 	if (!data->zbuffer)
 		exit_error("Fail to alloc zbuffer");

@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 12:23:45 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/06 17:29:38 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/06 18:16:16 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,10 @@ void	keyread(t_data *data)
 
 void	start(t_data *data)
 {
-	data->win = mlx_new_window(data->mlx, 720, 480, "cub3d");
+	data->win = mlx_new_window(data->mlx, data->screenwidth, data->screenheight, "cub3d");
 	if (!(data->win))
 		exit_error("Window creation failed");
-	data->img = mlx_new_image(data->mlx, 720, 480);
+	data->img = mlx_new_image(data->mlx, data->screenwidth, data->screenheight);
 	if (!(data->img))
 		exit_error("Window creation failed");
 	data->addr = (int *)mlx_get_data_addr(data->img, &data->bits_per_pixel,
@@ -88,7 +88,8 @@ void	start(t_data *data)
 
 void	window(t_data *data)
 {
-	data->mlx = mlx_init();
+	data->screenwidth = 720;
+	data->screenheight = 480;
 	get_pos(data);
 	assign_pos(data);
 	assigntextures(data);

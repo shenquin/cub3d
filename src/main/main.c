@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:03:58 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/06 13:17:11 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/06 18:15:07 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	main(int ac, char **av)
 		exit_error("Invalid arguments number");
 	allocmap(data, fd);
 	fd = open(av[1], O_RDONLY);
+	data->mlx = mlx_init();
 	while ((get_next_line(fd, &line)) > 0)
 	{
 		if (!line[0])
