@@ -1,7 +1,7 @@
 NO ./textures/mur1.xpm
 SO ./textures/mur2.xpm
-WE ./textures/sol.xpm
-EA ./textures/wolf/redbrick.xpm
+WE ./textures/mur3.xpm
+EA ./textures/mur4.xpm
 
 C 0,225,243
 F 224,205,169
@@ -13,3 +13,7 @@ F 224,205,169
 10011001
 10000001
 11111111
+
+Probleme résolution
+problème texture
+problème mur est noir

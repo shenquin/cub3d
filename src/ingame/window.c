@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   window.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 12:23:45 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/06 18:16:16 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/11 22:24:44 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,8 @@ void	start(t_data *data)
 
 void	window(t_data *data)
 {
-	data->screenwidth = 720;
-	data->screenheight = 480;
+	data->screenwidth = 1024;
+	data->screenheight = 768;
 	get_pos(data);
 	assign_pos(data);
 	assigntextures(data);
