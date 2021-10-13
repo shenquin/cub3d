@@ -1,0 +1,14 @@
+NO ./textures/mur1.xpm
+SO ./textures/mur2.xpm
+WE ./textures/mur3.xpm
+EA ./textures/mur4.xpm
+
+C 0,225,243
+F 224,205,169
+
+111111
+100001
+10W001
+100001
+100001
+111111
