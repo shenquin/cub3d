@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 18:36:49 by shenquin          #+#    #+#             */
-/*   Updated: 2021/10/13 16:07:15 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/13 16:21:17 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,21 @@ void	verline2(t_data *data, int a, int b)
 	data->texy = (int)data->texpos & (data->texheight - 1);
 	data->texpos += data->step;
 	if (data->side == 1 && data->raydiry < 0)
+		data->color = hexa_color(255, 200, 200);
+	if (data->side == 1 && data->raydiry > 0)
+		data->color = hexa_color(200, 255, 200);
+	if (data->side == 0 && data->raydirx < 0)
+		data->color = hexa_color(200, 200, 255);
+	if (data->side == 0 && data->raydirx > 0)
+		data->color = hexa_color(255, 200, 255);
+	data->addr[b * data->screenwidth + a] = data->color;
+}
+
+/*void	verline2(t_data *data, int a, int b)
+{
+	data->texy = (int)data->texpos & (data->texheight - 1);
+	data->texpos += data->step;
+	if (data->side == 1 && data->raydiry < 0)
 		data->color = data->addrno[data->texheight * data->texy + data->texx];
 	if (data->side == 1 && data->raydiry > 0)
 		data->color = data->addrso[data->texheight * data->texy + data->texx];
@@ -43,7 +58,7 @@ void	verline2(t_data *data, int a, int b)
 	if (data->side == 0 && data->raydirx > 0)
 		data->color = data->addrea[data->texheight * data->texy + data->texx];
 	data->addr[b * data->screenwidth + a] = data->color;
-}
+}*/
 
 void	verline(t_data *data, int a)
 {

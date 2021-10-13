@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:28:07 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/13 12:01:02 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/13 16:21:36 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,5 +155,7 @@ int		walltexture(t_data *data);
 void	assigntextures(t_data *data);
 void	assign_pos(t_data *data);
 int		get_pos(t_data *data);
+int		hexa_color(int r, int g, int b);
+
 
 #endif
