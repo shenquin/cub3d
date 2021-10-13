@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:28:07 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/06 17:11:23 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/13 12:01:02 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 # define KEYPRESS 2
 # define KEYRELEASE 3
-# define EXIT 17
+# define EXIT_CODE 17
 
 # define INT_MAX 2148473647
 # define INT_MIN -2148473648
@@ -154,5 +154,6 @@ void	verline(t_data *data, int a);
 int		walltexture(t_data *data);
 void	assigntextures(t_data *data);
 void	assign_pos(t_data *data);
+int		get_pos(t_data *data);
 
 #endif

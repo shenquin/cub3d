@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   window.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 12:23:45 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/11 22:24:44 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/13 12:01:20 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	get_pos(t_data *data)
 void	keyread(t_data *data)
 {
 	mlx_hook(data->win, KEYPRESS, 1L << 0, key_read, data);
-	mlx_hook(data->win, 17, 1L << 17, ft_esc, data);
+	mlx_hook(data->win, EXIT_CODE, 1L << 17, ft_esc, data);
 	mlx_hook(data->win, 15, 1L << 16, ft_visible, data); //???
 }
 
@@ -88,15 +88,7 @@ void	start(t_data *data)
 
 void	window(t_data *data)
 {
-	data->screenwidth = 1024;
-	data->screenheight = 768;
-	get_pos(data);
-	assign_pos(data);
-	assigntextures(data);
-	while (data->mlx != NULL)
-	{
-		start(data);
-		keyread(data);
-		mlx_loop(data->mlx);
-	}
+	start(data);
+	keyread(data);
+	mlx_loop(data->mlx);
 }

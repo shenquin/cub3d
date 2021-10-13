@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:03:58 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/06 18:15:07 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/13 13:17:40 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,18 @@ void	test(t_data data)
 	printf("\nPosition = %c\n\n", data.position);
 }
 
+void	checkav(char *av)
+{
+	int i;
+
+	i = (ft_strlen(av) - 4);
+	if (av[i] == '.' && av[i + 1] == 'c'
+		&& av[i + 2] == 'u' && av[i + 3] == 'b')
+		return ;
+	else
+		exit_error("Wrong map format");
+}
+
 int	main(int ac, char **av)
 {
 	int		fd;
@@ -39,15 +51,21 @@ int	main(int ac, char **av)
 	data = ft_calloc2(sizeof(t_data));
 	if (ac != 2)
 		exit_error("Invalid arguments number");
+	checkav(av[1]);
 	allocmap(data, fd);
 	fd = open(av[1], O_RDONLY);
 	data->mlx = mlx_init();
+	data->screenwidth = 1024;
+	data->screenheight = 768;
 	while ((get_next_line(fd, &line)) > 0)
 	{
 		if (!line[0])
 			emptylineinmap(data);
 		parsing(data, line);
 	}
+	get_pos(data);
+	assign_pos(data);
+	assigntextures(data);
 	check_data(data);
 	checkifhole(data);
 	test(*data);
