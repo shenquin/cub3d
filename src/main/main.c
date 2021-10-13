@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:03:58 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/13 13:17:40 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/13 16:17:56 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,6 @@ void	test(t_data data)
 	printf("\nPosition = %c\n\n", data.position);
 }
 
-void	checkav(char *av)
-{
-	int i;
-
-	i = (ft_strlen(av) - 4);
-	if (av[i] == '.' && av[i + 1] == 'c'
-		&& av[i + 2] == 'u' && av[i + 3] == 'b')
-		return ;
-	else
-		exit_error("Wrong map format");
-}
-
 int	main(int ac, char **av)
 {
 	int		fd;
@@ -47,11 +35,12 @@ int	main(int ac, char **av)
 	t_data	*data;
 
 	fd = open(av[1], O_RDONLY);
+	if (fd <= 0)
+		exit_error("False argument");
 	line = NULL;
 	data = ft_calloc2(sizeof(t_data));
 	if (ac != 2)
 		exit_error("Invalid arguments number");
-	checkav(av[1]);
 	allocmap(data, fd);
 	fd = open(av[1], O_RDONLY);
 	data->mlx = mlx_init();
