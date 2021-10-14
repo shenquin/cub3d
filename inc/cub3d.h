@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:28:07 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/13 16:21:36 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/14 17:10:02 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,13 @@ typedef struct s_data
 	int				nb_line;
 	int				line_place;
 	char			*no;
-	void			*imgno;
+	char			*imgno;
 	char			*so;
-	void			*imgso;
+	char			*imgso;
 	char			*we;
-	void			*imgwe;
+	char			*imgwe;
 	char			*ea;
-	void			*imgea;
+	char			*imgea;
 	char			**map;
 	char			position;
 	int				**pos;

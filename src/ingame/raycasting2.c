@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 18:36:49 by shenquin          #+#    #+#             */
-/*   Updated: 2021/10/13 16:21:17 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/14 17:14:49 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	walltexture(t_data *data)
 	return (0);
 }
 
-void	verline2(t_data *data, int a, int b)
+/*void	verline2(t_data *data, int a, int b)
 {
 	data->texy = (int)data->texpos & (data->texheight - 1);
 	data->texpos += data->step;
@@ -43,9 +43,9 @@ void	verline2(t_data *data, int a, int b)
 	if (data->side == 0 && data->raydirx > 0)
 		data->color = hexa_color(255, 200, 255);
 	data->addr[b * data->screenwidth + a] = data->color;
-}
+}*/
 
-/*void	verline2(t_data *data, int a, int b)
+void	verline2(t_data *data, int a, int b)
 {
 	data->texy = (int)data->texpos & (data->texheight - 1);
 	data->texpos += data->step;
@@ -58,7 +58,7 @@ void	verline2(t_data *data, int a, int b)
 	if (data->side == 0 && data->raydirx > 0)
 		data->color = data->addrea[data->texheight * data->texy + data->texx];
 	data->addr[b * data->screenwidth + a] = data->color;
-}*/
+}
 
 void	verline(t_data *data, int a)
 {

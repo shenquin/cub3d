@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+         #
+#    By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/29 14:23:23 by thgillai          #+#    #+#              #
-#    Updated: 2021/10/06 14:16:13 by thgillai         ###   ########.fr        #
+#    Updated: 2021/10/14 17:24:29 by thgillai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,6 +75,7 @@ fclean:		clean
 		@echo "$(CYELLOW)Deleting libft.a and cub3d$(CEND)"
 		@echo "$(CGREY)"
 		${RM} ${NAME} ./lib/libft/libft.a
+		${RM} ./libmlx.dylib
 		@echo "$(CEND)"
 		@echo "$(CGREEN)Deleting done !$(CEND)"
 		@echo
