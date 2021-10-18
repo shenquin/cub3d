@@ -22,5 +22,4 @@ F 224,205,169
 1111111111111111111111111
 
 mur en dehors de map
-Overflow rgb
 ligne fin gnl

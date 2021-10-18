@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:03:58 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/18 14:32:43 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/18 18:46:09 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,25 @@ void	launch(t_data *data)
 	check_data(data);
 	checkifhole(data);
 	window(data);
+}
+
+void	goparse(int fd, char *line, t_data *data)
+{
+	while ((get_next_line(fd, &line)) > 0)
+	{
+		if (!line[0])
+			emptylineinmap(data);
+		else if (data->mapfinished == 1)
+			exit_error("Empty line in map0");
+		parsing(data, line);
+		free(line);
+	}
+	if (!line[0])
+		emptylineinmap(data);
+	else if (data->mapfinished == 1)
+		exit_error("Empty line in map0");
+	parsing(data, line);
+	free(line);
 }
 
 int	main(int ac, char **av)
@@ -40,12 +59,7 @@ int	main(int ac, char **av)
 	data->mlx = mlx_init();
 	data->screenwidth = 1024;
 	data->screenheight = 768;
-	while ((get_next_line(fd, &line)) > 0)
-	{
-		if (!line[0])
-			emptylineinmap(data);
-		parsing(data, line);
-	}
+	goparse(fd, line, data);
 	launch(data);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:50:35 by thgillai          #+#    #+#             */
-/*   Updated: 2021/09/21 09:18:47 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/18 18:53:08 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ void	checkifmap(char *line, t_data *data)
 	while (ft_ispace(line[i]))
 	{
 		i++;
+	}
+	if (!line[i])
+	{
+		parsemap(line, data);
+		return ;
 	}
 	if (line[i] == '1')
 		parsemap(line, data);
@@ -36,7 +41,7 @@ int	checkifmap2(char *line)
 		i++;
 	if (line[i] == '1')
 		return (1);
-	return (0);
+	return (1);
 }
 
 int	ft_atoi2(const char *str)

@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 14:35:41 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/06 13:52:03 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/18 18:49:29 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,25 @@ void	allocmap(t_data *data, int fd)
 	while (get_next_line(fd, &line2) > 0)
 	{
 		if (line2[0] == '0')
-			exit_error("Invalid map");
+			exit_error("Invalid map1");
 		if (line2[0] == '1' || (line2[0] == ' ' && checkifmap2(line2)))
 			data->nb_line++;
+		if (ft_strlen(line2) > (size_t)data->map_len)
+			data->map_len = ft_strlen(line2);
+		free(line2);
 	}
+	if (line2[0] == '1' || (line2[0] == ' ' && checkifmap2(line2)))
+		data->nb_line++;
+	if (ft_strlen(line2) > (size_t)data->map_len)
+		data->map_len = ft_strlen(line2);
+	free(line2);
 	data->map = malloc(sizeof(char *) * data->nb_line);
 	if (!data->map)
 		exit_error("fail with memory allocation");
 }
 
-void	parsemap(char *line, t_data *data)
+void	parsemap2(char *line, t_data *data, int i)
 {
-	int	i;
-
-	i = 0;
 	while (line[i])
 	{
 		if (line[i] == 'N' || line[i] == 'S' || line[i] == 'W'
@@ -48,8 +53,29 @@ void	parsemap(char *line, t_data *data)
 		}
 		i++;
 	}
+}
+
+void	parsemap(char *line, t_data *data)
+{
+	int	i;
+
+	i = 0;
+	parsemap2(line, data, i);
 	verifmapline(line);
-	data->map[data->line_place] = ft_strdup(line);
+	data->map[data->line_place] = ft_calloc(sizeof(char), data->map_len + 1);
+	i = 0;
+	while (i < data->map_len)
+	{
+		if (line[i] == '\0')
+			break ;
+		data->map[data->line_place][i] = line[i];
+		i++;
+	}
+	while (i < data->map_len)
+	{
+		data->map[data->line_place][i] = ' ';
+		i++;
+	}
 	data->line_place++;
 	data->existmap = 1;
 }

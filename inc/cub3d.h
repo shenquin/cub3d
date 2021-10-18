@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:28:07 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/18 14:32:27 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/18 17:57:57 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,8 @@ typedef struct s_data
 	int				*addrea;
 	int				color_ce;
 	int				color_fl;
+	int				mapfinished;
+	int				map_len;
 }					t_data;
 
 void	parsing(t_data *data, char *line);
