@@ -3,29 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:03:58 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/14 17:30:04 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/18 10:55:52 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/cub3d.h"
 
-void	test(t_data data)
+void	launch(t_data *data)
 {
-	printf("\nNO %s\n", data.no);
-	printf("SO %s\n", data.so);
-	printf("WE %s\n", data.we);
-	printf("EA %s\n\n", data.ea);
-	printf("C %d,%d,%d\n", data.ce_r, data.ce_g, data.ce_b);
-	printf("F %d,%d,%d\n\n", data.fl_r, data.fl_g, data.fl_b);
-	for (int i = 0; i < data.nb_line; i++)
-	{
-		printf("%s", data.map[i]);
-		printf("\n");
-	}
-	printf("\nPosition = %c\n\n", data.position);
+	get_pos(data);
+	assign_pos(data);
+	assigntextures(data);
+	check_data(data);
+	checkifhole(data);
+	window(data);
 }
 
 int	main(int ac, char **av)
@@ -52,12 +46,6 @@ int	main(int ac, char **av)
 			emptylineinmap(data);
 		parsing(data, line);
 	}
-	get_pos(data);
-	assign_pos(data);
-	assigntextures(data);
-	check_data(data);
-	checkifhole(data);
-	test(*data);
-	window(data);
+	launch(data);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 13:24:03 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/13 16:28:01 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/18 10:57:02 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void	assign_pos2(t_data *data)
 		data->diry = 1;
 		data->posi = 1;
 	}
-	//data->map[(int)data->posx][(int)data->posy] = '0';
 	data->comptpos = 1;
 }
 

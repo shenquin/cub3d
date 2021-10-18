@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+         #
+#    By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/29 14:23:23 by thgillai          #+#    #+#              #
-#    Updated: 2021/10/14 17:24:29 by thgillai         ###   ########.fr        #
+#    Updated: 2021/10/18 10:32:22 by thgillai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRCNAME =	src/main/main.c\
 			src/parsing/parsemap.c \
 			src/utils/error_handler2.c \
 			src/ingame/window.c \
+			src/ingame/window2.c \
 			src/ingame/keyboard.c \
 			src/ingame/keyboard2.c \
 			src/ingame/raycasting.c \

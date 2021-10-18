@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 14:28:07 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/14 17:10:02 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/18 10:40:47 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@
 
 typedef struct s_data
 {
-	// parsing
 	int				ce_r;
 	int				ce_g;
 	int				ce_b;
@@ -60,7 +59,6 @@ typedef struct s_data
 	void			*mlx_ptr;
 	int				nb_map;
 	int				existmap;
-	// création de l'image
 	void			*mlx;
 	void			*win;
 	void			*img;
@@ -68,8 +66,8 @@ typedef struct s_data
 	int				bits_per_pixel;
 	int				line_length;
 	int				endian;
-	double				posx;
-	double				posy;
+	double			posx;
+	double			posy;
 	double			movespeed;
 	double			rotspeed;
 	double			planex;
@@ -80,7 +78,6 @@ typedef struct s_data
 	double			diry;
 	double			posi;
 	int				comptpos;
-	// raycasting
 	double			*zbuffer;
 	double			camerax;
 	double			raydirx;
@@ -154,8 +151,9 @@ void	verline(t_data *data, int a);
 int		walltexture(t_data *data);
 void	assigntextures(t_data *data);
 void	assign_pos(t_data *data);
-int		get_pos(t_data *data);
+void	get_pos(t_data *data);
 int		hexa_color(int r, int g, int b);
-
+int		ft_esc(t_data *data);
+int		ft_visible(t_data *data);
 
 #endif
