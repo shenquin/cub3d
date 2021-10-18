@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 13:45:17 by thgillai          #+#    #+#             */
-/*   Updated: 2021/09/21 09:18:25 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/18 14:05:59 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,16 @@ void	checkifhole(t_data *data)
 			{
 				if ((data->map[i][j - 1] == ' ')
 					|| (data->map[i][j - 1] == '\n')
-					|| (data->map[i][j + 1] == ' '
-					|| data->map[i][j + 1] == '\n')
-					|| (data->map[i - 1][j] == ' '
-					|| data->map[i - 1][j] == '\n')
-					|| (data->map[i + 1][j] == ' '
-					|| data->map[i + 1][j] == '\n'))
+					|| (!data->map[i + 1][j])
+					|| (data->map[i][j + 1] == ' ')
+					|| (data->map[i][j + 1] == '\n')
+					|| (!data->map[i + 1][j])
+					|| (data->map[i - 1][j] == ' ')
+					|| (data->map[i - 1][j] == '\n')
+					|| (!data->map[i + 1][j])
+					|| (data->map[i + 1][j] == ' ')
+					|| (data->map[i + 1][j] == '\n')
+					|| (!data->map[i + 1][j]))
 					exit_error("Hole in map");
 			}
 			j++;
