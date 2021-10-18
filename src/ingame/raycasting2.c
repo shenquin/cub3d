@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thgillai <thgillai@student.s19.be>         +#+  +:+       +#+        */
+/*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/11 18:36:49 by shenquin          #+#    #+#             */
-/*   Updated: 2021/10/14 17:14:49 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/18 11:34:05 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,6 @@ int	walltexture(t_data *data)
 			+ data->lineheight / 2) * data->step;
 	return (0);
 }
-
-/*void	verline2(t_data *data, int a, int b)
-{
-	data->texy = (int)data->texpos & (data->texheight - 1);
-	data->texpos += data->step;
-	if (data->side == 1 && data->raydiry < 0)
-		data->color = hexa_color(255, 200, 200);
-	if (data->side == 1 && data->raydiry > 0)
-		data->color = hexa_color(200, 255, 200);
-	if (data->side == 0 && data->raydirx < 0)
-		data->color = hexa_color(200, 200, 255);
-	if (data->side == 0 && data->raydirx > 0)
-		data->color = hexa_color(255, 200, 255);
-	data->addr[b * data->screenwidth + a] = data->color;
-}*/
 
 void	verline2(t_data *data, int a, int b)
 {
