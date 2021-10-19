@@ -6,7 +6,7 @@
 #    By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/29 14:23:23 by thgillai          #+#    #+#              #
-#    Updated: 2021/10/19 15:02:16 by thgillai         ###   ########.fr        #
+#    Updated: 2021/10/19 20:55:13 by thgillai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ SRCS		= ${SRCNAME}
 
 OBJS		= ${SRCS:.c=.o}
 
-NAME		= cub3d
+NAME		= cub3D
 
 CC			= gcc #-g -fsanitize=address
 RM			= rm -f

@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 14:35:41 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/19 15:25:48 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/19 20:45:11 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ void	parsemap(char *line, t_data *data)
 	parsemap2(line, data, i);
 	verifmapline(line);
 	data->map[data->line_place] = ft_calloc(sizeof(char), data->map_len + 1);
+	if (data->map[data->line_place] == NULL)
+		exit_error("Data->map allocation failed");
 	i = 0;
 	while (i < data->map_len)
 	{

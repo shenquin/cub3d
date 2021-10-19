@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:03:58 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/19 20:12:23 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/19 20:43:03 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,14 @@ int	main(int ac, char **av)
 	checkav(av[1]);
 	line = NULL;
 	data = ft_calloc2(sizeof(t_data));
+	if (data == NULL)
+		exit_error("Data allocation failed");
 	if (ac != 2)
 		exit_error("Invalid arguments number");
 	allocmap(data, fd);
 	fd = open(av[1], O_RDONLY);
+	if (!fd)
+		exit_error("File descriptor creation failed");
 	data->mlx = mlx_init();
 	data->screenwidth = 1024;
 	data->screenheight = 768;

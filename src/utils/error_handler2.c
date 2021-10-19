@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 13:45:17 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/19 15:29:28 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/19 20:48:09 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ void	verifmapline(char *line)
 
 void	checkifhole2(t_data *data, int i, int j)
 {
-	if (data->map[i][j] == '0')
+	if (data->map[i][j] == '0' || data->map[i][j] == 'N'
+		|| data->map[i][j] == 'S' || data->map[i][j] == 'W'
+		|| data->map[i][j] == 'E')
 	{
 		if ((data->map[i][j - 1] == ' ')
 			|| (data->map[i][j - 1] == '\n')

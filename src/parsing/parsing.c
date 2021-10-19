@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:19:53 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/19 20:05:27 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/19 20:43:25 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	parsing3(t_data *data, char *line)
 	if (line[0] != 'N' && line[0] != 'S' && line[0] != 'W' && line[0] != 'E'
 		&& line[0] != 'C' && line[0] != 'F' && line[0] != '1'
 		&& line[0] != '0' && line[0] != ' ')
-		exit_error("111111");
+		exit_error("Invalid content");
 }
 
 void	parsing2(t_data *data, char *line)
