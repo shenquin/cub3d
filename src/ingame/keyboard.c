@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 13:24:03 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/19 15:02:06 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/19 15:42:58 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,10 +81,7 @@ void	assign_pos(t_data *data)
 int	key_read(int keycode, t_data *data)
 {
 	if (keycode == KEYCODE_ESC)
-	{
-		system("leaks cub3d");
 		exit (0);
-	}
 	if (keycode == KEYCODE_W || keycode == KEYCODE_UPARROW)
 		foreward(data);
 	if (keycode == KEYCODE_S || keycode == KEYCODE_DOWNARROW)
