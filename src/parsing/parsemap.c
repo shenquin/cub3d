@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 14:35:41 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/18 18:49:29 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/19 15:25:48 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	allocmap(t_data *data, int fd)
 	while (get_next_line(fd, &line2) > 0)
 	{
 		if (line2[0] == '0')
-			exit_error("Invalid map1");
+			exit_error("Invalid map");
 		if (line2[0] == '1' || (line2[0] == ' ' && checkifmap2(line2)))
 			data->nb_line++;
 		if (ft_strlen(line2) > (size_t)data->map_len)

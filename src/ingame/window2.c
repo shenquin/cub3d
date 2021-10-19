@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/18 10:30:35 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/18 18:58:57 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/19 14:59:27 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	ft_visible(t_data *data)
 int	ft_esc(t_data *data)
 {
 	(void)data;
+	system("leaks cub3d");
 	exit(0);
 	return (0);
 }

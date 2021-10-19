@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 13:45:17 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/18 18:52:57 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/19 15:29:28 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	verifmapline(char *line)
 		if (line[i] != '0' && line[i] != '1' && line[i] != 'N'
 			&& line[i] != 'S' && line[i] != 'W'
 			&& line[i] != 'E' && line[i] != ' ' )
-			exit_error("Invalid map3");
+			exit_error("Invalid map");
 		i++;
 	}
 }
