@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 13:43:33 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/20 11:17:15 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/20 11:48:28 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	check_data(t_data *data)
 	if (data->ce_r > 255 || data->ce_g > 255 || data->ce_b > 255)
 		exit_error("Invalid ceiling");
 	if (data->position == 0)
-		exit_error("There is no spawn");
+		exit_error("Invalid content");
 	check_data2(data);
 }
 

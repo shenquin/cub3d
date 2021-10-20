@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 13:45:17 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/20 11:18:04 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/20 11:48:38 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	checkifhole2(t_data *data, int i, int j)
 			|| (data->map[i + 1][j] == ' ')
 			|| (data->map[i + 1][j] == '\n')
 			|| (!data->map[i + 1][j]))
-			exit_error("Hole in map");
+			exit_error("Invalid content");
 	}
 }
 

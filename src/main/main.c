@@ -39,8 +39,8 @@ void	launch(t_data *data)
 {
 	get_pos(data);
 	assign_pos(data);
-	assigntextures(data);
 	check_data(data);
+	assigntextures(data);
 	checkifhole(data);
 	window(data);
 }
