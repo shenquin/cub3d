@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:03:58 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/20 11:14:48 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/20 13:21:38 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,6 @@ void	goparse(int fd, char *line, t_data *data)
 {
 	while ((get_next_line(fd, &line)) > 0)
 	{
-		if (ft_strlen(line) > 0 && ft_strlen(line) < 3 && checkerrorline(line) == 0)
-			exit_error("Invalid content");
 		if (!line[0])
 			emptylineinmap(data);
 		else if (data->mapfinished == 1)
@@ -58,8 +56,6 @@ void	goparse(int fd, char *line, t_data *data)
 		parsing(data, line);
 		free(line);
 	}
-	if (ft_strlen(line) > 0 && ft_strlen(line) < 3 && checkerrorline(line) == 0)
-		exit_error("Invalid content");
 	if (!line[0])
 		emptylineinmap(data);
 	else if (data->mapfinished == 1)
