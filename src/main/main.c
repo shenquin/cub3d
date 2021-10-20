@@ -6,11 +6,22 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:03:58 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/19 20:43:03 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/20 11:14:48 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/cub3d.h"
+
+int	checkerrorline(char *line)
+{
+	if (ft_strlen(line) == 1)
+		if (line[0] == ' ')
+			return (1);
+	if (ft_strlen(line) == 2)
+		if (line[0] == ' ' && line[1] == ' ')
+			return (1);
+	return (0);
+}
 
 void	checkav(char *av)
 {
@@ -38,17 +49,21 @@ void	goparse(int fd, char *line, t_data *data)
 {
 	while ((get_next_line(fd, &line)) > 0)
 	{
+		if (ft_strlen(line) > 0 && ft_strlen(line) < 3 && checkerrorline(line) == 0)
+			exit_error("Invalid content");
 		if (!line[0])
 			emptylineinmap(data);
 		else if (data->mapfinished == 1)
-			exit_error("Empty line in map");
+			exit_error("Invalid content");
 		parsing(data, line);
 		free(line);
 	}
+	if (ft_strlen(line) > 0 && ft_strlen(line) < 3 && checkerrorline(line) == 0)
+		exit_error("Invalid content");
 	if (!line[0])
 		emptylineinmap(data);
 	else if (data->mapfinished == 1)
-		exit_error("Empty line in map");
+		exit_error("Invalid content");
 	parsing(data, line);
 	free(line);
 	if (data->nb_line == 0)

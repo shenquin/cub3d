@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 13:43:33 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/19 15:27:44 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/20 11:17:15 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ void	check_cefl(char *line)
 		i++;
 	}
 	if (nb_str != 3)
-		exit_error("Invalid ceiling or floor");
+		exit_error("Invalid content");
 	i = 1;
 	while (line[i])
 	{
 		if (!ft_isdigit(line[i]) && !ft_ispace(line[i]) && !(line[i] == ','))
-			exit_error("Invalid ceiling or floor");
+			exit_error("Invalid content");
 		i++;
 	}
 }
@@ -45,7 +45,7 @@ void	check_data2(t_data *data)
 	while (data->map[0][j])
 	{
 		if (data->map[0][j] != '1' && data->map[0][j] != ' ')
-			exit_error("Invalid map");
+			exit_error("Invalid content");
 		j++;
 	}
 	j = 0;
@@ -53,7 +53,7 @@ void	check_data2(t_data *data)
 	{
 		if (data->map[data->nb_line - 1][j] != '1'
 			&& data->map[data->nb_line - 1][j] != ' ')
-			exit_error("Invalid map");
+			exit_error("Invalid content");
 		j++;
 	}
 }
@@ -82,5 +82,5 @@ void	check_comma(char *line)
 		if (line[i++] == ',')
 			nb_comma++;
 	if (nb_comma != 2)
-		exit_error("invalid ceiling or floor");
+		exit_error("Invalid content");
 }

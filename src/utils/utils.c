@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 16:50:35 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/18 18:53:08 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/20 11:18:33 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	checkifmap(char *line, t_data *data)
 	if (line[i] == '1')
 		parsemap(line, data);
 	else
-		exit_error("Parsing data error");
+		exit_error("Invalid content");
 }
 
 int	checkifmap2(char *line)
@@ -56,8 +56,6 @@ int	ft_atoi2(const char *str)
 	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
 		|| str[i] == '\f' || str[i] == '\r')
 		i++;
-	if (str[i] == '-' || str[i] == '+')
-		exit_error("Invalid resolution");
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		res = res * 10 + str[i] - '0';

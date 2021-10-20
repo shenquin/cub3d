@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/13 12:19:53 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/19 20:43:25 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/20 11:16:19 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	parsing3(t_data *data, char *line)
 	if (line[0] == '1')
 	{
 		if (data->map_argnb != 6)
-			exit_error("Invalid map");
+			exit_error("Invalid content");
 		parsemap(line, data);
 	}
 	else if (line[0] == ' ')

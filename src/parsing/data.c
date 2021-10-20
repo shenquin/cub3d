@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 12:03:19 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/18 18:46:53 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/20 11:13:09 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,20 +77,20 @@ void	fl(char *line, t_data *data)
 	check_cefl(line);
 	sol = ft_split(line, ',');
 	if (!sol || strslen(sol) != 3)
-		exit_error("Invalid ce");
+		exit_error("Invalid fl");
 	trim = ft_strtrim(sol[0], " ");
 	if (!trim || ft_strlen(trim) > 3)
-		exit_error("Invalid ce");
+		exit_error("Invalid fl");
 	data->fl_r = atoi(trim);
 	free(trim);
 	trim = ft_strtrim(sol[1], " ");
 	if (!trim || ft_strlen(trim) > 3)
-		exit_error("Invalid ce");
+		exit_error("Invalid fl");
 	data->fl_g = atoi(trim);
 	free(trim);
 	trim = ft_strtrim(sol[2], " ");
 	if (!trim || ft_strlen(trim) > 3)
-		exit_error("Invalid ce");
+		exit_error("Invalid fl");
 	data->fl_b = atoi(trim);
 	data->color_fl = hexa_color(data->fl_r, data->fl_g, data->fl_b);
 	free(trim);

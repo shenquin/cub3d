@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/14 14:35:41 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/19 20:45:11 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/20 11:15:18 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	allocmap(t_data *data, int fd)
 	while (get_next_line(fd, &line2) > 0)
 	{
 		if (line2[0] == '0')
-			exit_error("Invalid map");
+			exit_error("Invalid content");
 		if (line2[0] == '1' || (line2[0] == ' ' && checkifmap2(line2)))
 			data->nb_line++;
 		if (ft_strlen(line2) > (size_t)data->map_len)
@@ -49,7 +49,7 @@ void	parsemap2(char *line, t_data *data, int i)
 			if (data->position == 0)
 				data->position = line[i];
 			else
-				exit_error("Too much spawn");
+				exit_error("Too many spawn");
 		}
 		i++;
 	}

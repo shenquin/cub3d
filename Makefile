@@ -6,7 +6,7 @@
 #    By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/29 14:23:23 by thgillai          #+#    #+#              #
-#    Updated: 2021/10/19 20:55:13 by thgillai         ###   ########.fr        #
+#    Updated: 2021/10/20 10:50:41 by thgillai         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ OBJS		= ${SRCS:.c=.o}
 
 NAME		= cub3D
 
-CC			= gcc #-g -fsanitize=address
+CC			= gcc -g -fsanitize=address
 RM			= rm -f
 CFLAGS		= -Wall -Wextra -Werror -I -I./lib/libft
 

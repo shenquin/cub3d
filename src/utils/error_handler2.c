@@ -6,7 +6,7 @@
 /*   By: thgillai <thgillai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 13:45:17 by thgillai          #+#    #+#             */
-/*   Updated: 2021/10/19 20:48:09 by thgillai         ###   ########.fr       */
+/*   Updated: 2021/10/20 11:18:04 by thgillai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	verifmapline(char *line)
 		if (line[i] != '0' && line[i] != '1' && line[i] != 'N'
 			&& line[i] != 'S' && line[i] != 'W'
 			&& line[i] != 'E' && line[i] != ' ' )
-			exit_error("Invalid map");
+			exit_error("Invalid content");
 		i++;
 	}
 }
@@ -79,5 +79,5 @@ void	emptylineinmap(t_data *data)
 	if (data->existmap == 0)
 		return ;
 	else
-		exit_error("Empty line in map");
+		exit_error("Invalid content");
 }
